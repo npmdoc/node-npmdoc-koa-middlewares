@@ -1,0 +1,5408 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/cnpm/koa-middlewares"
+
+    >koa-middlewares (v6.0.0)</a>
+</h1>
+<h4>easy way to require some useful koa middlewares</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares">module koa-middlewares</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.RedisStore">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>RedisStore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.ResourceRouter">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>ResourceRouter
+            <span class="apidocSignatureSpan">(name, actions, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.bodyParser">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>bodyParser
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.bodyparser">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>bodyparser
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.compress">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>compress
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.conditional">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>conditional
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.cookieSession">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>cookieSession
+            <span class="apidocSignatureSpan">(opts, app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.csrf">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>csrf
+            <span class="apidocSignatureSpan">(app, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.ejs">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>ejs
+            <span class="apidocSignatureSpan">(app, settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.etag">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>etag
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.favicon">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>favicon
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.jsonp">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>jsonp
+            <span class="apidocSignatureSpan">(app, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.logger">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>logger
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.onerror">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>onerror
+            <span class="apidocSignatureSpan">(app, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.redisStore">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>redisStore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.resourceRouter">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>resourceRouter
+            <span class="apidocSignatureSpan">(name, actions, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.rewrite">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>rewrite
+            <span class="apidocSignatureSpan">(src, dst)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>router
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.rt">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>rt
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.session">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>session
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.session.MemoryStore">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>session.MemoryStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.staticCache">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>staticCache
+            <span class="apidocSignatureSpan">(dir, options, files)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">koa-middlewares.</span>RedisStore.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">koa-middlewares.</span>ResourceRouter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">koa-middlewares.</span>router.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">koa-middlewares.</span>session.MemoryStore.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.RedisStore">module koa-middlewares.RedisStore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.RedisStore.RedisStore">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>RedisStore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.RedisStore.super_">
+            function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.RedisStore.prototype">module koa-middlewares.RedisStore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.RedisStore.prototype.destroy">
+            function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(sid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.RedisStore.prototype.end">
+            function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.RedisStore.prototype.get">
+            function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>get
+            <span class="apidocSignatureSpan">(sid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.RedisStore.prototype.quit">
+            function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>quit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.RedisStore.prototype.set">
+            function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>set
+            <span class="apidocSignatureSpan">(sid, sess, ttl)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.ResourceRouter">module koa-middlewares.ResourceRouter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.ResourceRouter.ResourceRouter">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>ResourceRouter
+            <span class="apidocSignatureSpan">(name, actions, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.ResourceRouter.prototype">module koa-middlewares.ResourceRouter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.ResourceRouter.prototype.add">
+            function <span class="apidocSignatureSpan">koa-middlewares.ResourceRouter.prototype.</span>add
+            <span class="apidocSignatureSpan">(resource)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.ResourceRouter.prototype.match">
+            function <span class="apidocSignatureSpan">koa-middlewares.ResourceRouter.prototype.</span>match
+            <span class="apidocSignatureSpan">(path, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.ResourceRouter.prototype.middleware">
+            function <span class="apidocSignatureSpan">koa-middlewares.ResourceRouter.prototype.</span>middleware
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.csrf">module koa-middlewares.csrf</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.csrf.csrf">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>csrf
+            <span class="apidocSignatureSpan">(app, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.csrf.middleware">
+            function <span class="apidocSignatureSpan">koa-middlewares.csrf.</span>middleware
+            <span class="apidocSignatureSpan">(next)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.router">module koa-middlewares.router</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.router">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>router
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.url">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.</span>url
+            <span class="apidocSignatureSpan">(path, params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.router.prototype">module koa-middlewares.router.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.acl">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>acl
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.all">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>all
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.allowedMethods">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>allowedMethods
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.bind">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>bind
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.checkout">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>checkout
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.connect">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>connect
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.copy">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>copy
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.del">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>del
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.delete">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>delete
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.get">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>get
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.head">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>head
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.link">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>link
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.lock">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>lock
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.m-search">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>m-search
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.match">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>match
+            <span class="apidocSignatureSpan">(path, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.merge">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>merge
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.middleware">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>middleware
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.mkactivity">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>mkactivity
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.mkcalendar">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>mkcalendar
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.mkcol">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>mkcol
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.move">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>move
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.notify">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>notify
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.options">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>options
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.param">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>param
+            <span class="apidocSignatureSpan">(param, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.patch">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>patch
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.post">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>post
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.prefix">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>prefix
+            <span class="apidocSignatureSpan">(prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.propfind">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>propfind
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.proppatch">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>proppatch
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.purge">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>purge
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.put">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>put
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.rebind">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>rebind
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.redirect">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>redirect
+            <span class="apidocSignatureSpan">(source, destination, code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.register">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>register
+            <span class="apidocSignatureSpan">(path, methods, middleware, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.report">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>report
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.route">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>route
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.routes">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>routes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.search">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>search
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.subscribe">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>subscribe
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.trace">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>trace
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.unbind">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>unbind
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.unlink">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>unlink
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.unlock">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>unlock
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.unsubscribe">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>unsubscribe
+            <span class="apidocSignatureSpan">(name, path, middleware)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.url">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>url
+            <span class="apidocSignatureSpan">(name, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.router.prototype.use">
+            function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>use
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.session">module koa-middlewares.session</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.session.session">
+            function <span class="apidocSignatureSpan">koa-middlewares.</span>session
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.session.MemoryStore">
+            function <span class="apidocSignatureSpan">koa-middlewares.session.</span>MemoryStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.session.MemoryStore">module koa-middlewares.session.MemoryStore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.session.MemoryStore.MemoryStore">
+            function <span class="apidocSignatureSpan">koa-middlewares.session.</span>MemoryStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-middlewares.session.MemoryStore.prototype">module koa-middlewares.session.MemoryStore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.session.MemoryStore.prototype.destroy">
+            function <span class="apidocSignatureSpan">koa-middlewares.session.MemoryStore.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(sid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.session.MemoryStore.prototype.get">
+            function <span class="apidocSignatureSpan">koa-middlewares.session.MemoryStore.prototype.</span>get
+            <span class="apidocSignatureSpan">(sid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-middlewares.session.MemoryStore.prototype.set">
+            function <span class="apidocSignatureSpan">koa-middlewares.session.MemoryStore.prototype.</span>set
+            <span class="apidocSignatureSpan">(sid, val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares" id="apidoc.module.koa-middlewares">module koa-middlewares</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.RedisStore" id="apidoc.element.koa-middlewares.RedisStore">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>RedisStore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RedisStore = function (options) {
+  if (!(this instanceof RedisStore)) {
+    return new RedisStore(options);
+  }
+  EventEmitter.call(this);
+  options = options || {};
+
+  var client;
+  options.auth_pass = options.auth_pass || options.pass || null;     // For backwards compatibility
+  options.path = options.path || options.socket || null;             // For backwards compatibility
+  if (!options.client) {
+    debug(&#x27;Init redis new client&#x27;);
+    client = redis.createClient(options);
+  } else {
+    if (options.duplicate) {                                         // Duplicate client and update with options provided
+      debug(&#x27;Duplicating provided client with new options (if provided)&#x27;);
+      var dupClient = options.client;
+      delete options.client;
+      delete options.duplicate;
+      client = dupClient.duplicate(options);                         // Useful if you want to use the DB option without adjusting
+ the client DB outside koa-redis
+    } else {
+      debug(&#x27;Using provided client&#x27;);
+      client = options.client;
+    }
+  }
+
+  if (options.db) {
+    debug(&#x27;selecting db %s&#x27;, options.db)
+    client.select(options.db);
+    client.on(&#x27;connect&#x27;, function() {
+      client.send_anyways = true;
+      client.select(options.db);
+      client.send_anyways = false;
+    });
+  }
+
+  client.on(&#x27;error&#x27;, this.emit.bind(this, &#x27;error&#x27;));
+  client.on(&#x27;end&#x27;, this.emit.bind(this, &#x27;end&#x27;));
+  client.on(&#x27;end&#x27;, this.emit.bind(this, &#x27;disconnect&#x27;));              // For backwards compatibility
+  client.on(&#x27;connect&#x27;, this.emit.bind(this, &#x27;connect&#x27;));
+  client.on(&#x27;reconnecting&#x27;, this.emit.bind(this, &#x27;reconnecting&#x27;));
+  client.on(&#x27;ready&#x27;, this.emit.bind(this, &#x27;ready&#x27;));
+  client.on(&#x27;warning&#x27;, this.emit.bind(this, &#x27;warning&#x27;));
+  this.on(&#x27;connect&#x27;, function() {
+    debug(&#x27;connected to redis&#x27;);
+    this.connected = client.connected;
+  });
+  this.on(&#x27;ready&#x27;, function() {
+    debug(&#x27;redis ready&#x27;);
+  });
+  this.on(&#x27;end&#x27;, function() {
+    debug(&#x27;redis ended&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test error
+<span class="apidocCodeCommentSpan">  /* istanbul ignore next */
+</span>  this.on(&#x27;error&#x27;, function() {
+    debug(&#x27;redis error&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test reconnect
+  /* istanbul ignore next */
+  this.on(&#x27;reconnecting&#x27;, function() {
+    debug(&#x27;redis reconnecting&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test warning
+  /* istanbul ignore next */
+  this.on(&#x27;warning&#x27;, function() {
+    debug(&#x27;redis warning&#x27;);
+    this.connected = client.connected;
+  });
+
+  //wrap redis
+  this._redisClient = client;
+  this.client = redisWrapper(client);
+  this.connected = client.connected;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* **koa-generic-session**: A session like connect with memory,
+has friendly APIs for work with other Stores such as `redis`, `mongo`.
+* **koa-redis**: Work togather with `koa-generic-session`, provide a redis store from koa-sess.
+
+```js
+app.use(middlewares.session({
+store: middlewares.<span class="apidocCodeKeywordSpan">RedisStore</span>(),
+defer: true
+}));
+
+app.use(function *() {
+var session = yield this.session;
+session.foo = &#x27;bar&#x27;;
+this.body = this.session.foo;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.ResourceRouter" id="apidoc.element.koa-middlewares.ResourceRouter">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>ResourceRouter
+        <span class="apidocSignatureSpan">(name, actions, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Resource(name, actions, options) {
+  if (!(this instanceof Resource)) {
+    var args = Array.prototype.slice.call(arguments);
+    var resource = Object.create(Resource.prototype);
+    Resource.apply(resource, args);
+    return resource;
+  }
+  options = options || {};
+  this.name = typeof name == &#x27;string&#x27; ? name : null;
+
+  this.id = this.name ? pluralize.singular(name) : &#x27;id&#x27;;
+  this.base = this.name ? &#x27;/&#x27; + this.name : &#x27;/&#x27;;
+
+  var middleware = Array.prototype.slice.call(arguments, this.name ? 1 : 0);
+
+  this.actions = middleware.pop();
+
+  // if last object has `methods` property or `id` property, assume it is `options`
+  if (this.actions.methods || this.actions.id) {
+    options = this.actions;
+    this.actions = middleware.pop();
+  }
+
+  this.routes = [];
+  this.resources = [];
+
+  this.options = {
+    id: options.id,
+    methods: defaults(options.methods || {}, {
+      &#x27;options&#x27;: &#x27;OPTIONS&#x27;,
+      &#x27;new&#x27;:     &#x27;GET&#x27;,
+      &#x27;create&#x27;:  &#x27;POST&#x27;,
+      &#x27;edit&#x27;:    &#x27;GET&#x27;,
+      &#x27;update&#x27;:  &#x27;PUT&#x27;,
+      &#x27;index&#x27;:   &#x27;GET&#x27;,
+      &#x27;list&#x27;:    &#x27;GET&#x27;,
+      &#x27;read&#x27;:    &#x27;GET&#x27;,
+      &#x27;show&#x27;:    &#x27;GET&#x27;,
+      &#x27;destroy&#x27;: &#x27;DELETE&#x27;,
+      &#x27;remove&#x27;:  &#x27;DELETE&#x27;
+    })
+  };
+
+  // Set a custom id param name if one was provided.
+  this.id = this.options.id || this.id;
+
+  // create route definition (used for routing) for each resource action
+  Object.keys(this.actions).forEach(function(name) {
+    var action = this.actions[name];
+    var url = this.base;
+    var urlTrailing = this.base;
+    var params = [];
+
+    if (!this.options.methods[name]) return;
+
+    if (url[url.length-1] != &#x27;/&#x27;) {
+      urlTrailing = url + &#x27;/&#x27;;
+    }
+
+    if (name == &#x27;new&#x27;) {
+      url = urlTrailing + &#x27;new&#x27;;
+    }
+    else if (name == &#x27;edit&#x27;) {
+      url = urlTrailing + &#x27;:&#x27; + this.id + &#x27;/edit&#x27;;
+    }
+    else if (name.match(/(show|read|update|remove|destroy)/)) {
+      url = urlTrailing + &#x27;:&#x27; + this.id;
+    }
+
+    // compose multiple action middleware
+    if (action instanceof Array) {
+      this.actions[name] = compose(action);
+    }
+
+    // compose resource middleware
+    if (middleware.length) {
+      this.actions[name] = compose(middleware.concat(Array.isArray(action) ? action : [action]));
+    }
+
+    this.routes.push({
+      method: this.options.methods[name].toUpperCase(),
+      url: url,
+      regexp: pathToRegExp(url, params),
+      params: params,
+      action: this.actions[name]
+    });
+  }, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.bodyParser" id="apidoc.element.koa-middlewares.bodyParser">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>bodyParser
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bodyParser = function (opts) {
+  opts = opts || {};
+  var detectJSON = opts.detectJSON;
+  var onerror = opts.onerror;
+
+  var enableTypes = opts.enableTypes || [&#x27;json&#x27;, &#x27;form&#x27;];
+  var enableForm = checkEnable(enableTypes, &#x27;form&#x27;);
+  var enableJson = checkEnable(enableTypes, &#x27;json&#x27;);
+  var enableText = checkEnable(enableTypes, &#x27;text&#x27;);
+
+  opts.detectJSON = undefined;
+  opts.onerror = undefined;
+
+  // force co-body return raw body
+  opts.returnRawBody = true;
+
+  // default json types
+  var jsonTypes = [
+    &#x27;application/json&#x27;,
+    &#x27;application/json-patch+json&#x27;,
+    &#x27;application/vnd.api+json&#x27;,
+    &#x27;application/csp-report&#x27;,
+  ];
+
+  // default form types
+  var formTypes = [
+    &#x27;application/x-www-form-urlencoded&#x27;,
+  ];
+
+  // default text types
+  var textTypes = [
+    &#x27;text/plain&#x27;,
+  ];
+
+  var jsonOpts = formatOptions(opts, &#x27;json&#x27;);
+  var formOpts = formatOptions(opts, &#x27;form&#x27;);
+  var textOpts = formatOptions(opts, &#x27;text&#x27;);
+
+  var extendTypes = opts.extendTypes || {};
+
+  extendType(jsonTypes, extendTypes.json);
+  extendType(formTypes, extendTypes.form);
+  extendType(textTypes, extendTypes.text);
+
+  return function *bodyParser(next) {
+    if (this.request.body !== undefined) return yield next;
+    if (this.disableBodyParser) return yield next;
+    try {
+      var res = yield parseBody(this);
+      this.request.body = &#x27;parsed&#x27; in res ? res.parsed : {};
+      if (this.request.rawBody === undefined) this.request.rawBody = res.raw;
+    } catch (err) {
+      if (onerror) {
+        onerror(err, this);
+      } else {
+        throw err;
+      }
+    }
+    yield next;
+  };
+
+  function* parseBody(ctx) {
+    if (enableJson &#x26;&#x26; ((detectJSON &#x26;&#x26; detectJSON(ctx)) || ctx.request.is(jsonTypes))) {
+      return yield parse.json(ctx, jsonOpts);
+    }
+    if (enableForm &#x26;&#x26; ctx.request.is(formTypes)) {
+      return yield parse.form(ctx, formOpts);
+    }
+    if (enableText &#x26;&#x26; ctx.request.is(textTypes)) {
+      return yield parse.text(ctx, textOpts) || &#x27;&#x27;;
+    }
+    return {};
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+
+var koa = require(&#x27;koa&#x27;);
+var middlewares = require(&#x27;koa-middlewares&#x27;);
+
+var app = koa();
+
+app.use(middlewares.<span class="apidocCodeKeywordSpan">bodyParser</span>());
+app.use(middlewares.router(app));
+app.use(middlewares.conditional());
+app.use(middlewares.etag());
+app.use(middlewares.compress());
+middlewares.csrf(app);
+
+app.use(function *() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.bodyparser" id="apidoc.element.koa-middlewares.bodyparser">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>bodyparser
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bodyparser = function (opts) {
+  opts = opts || {};
+  var detectJSON = opts.detectJSON;
+  var onerror = opts.onerror;
+
+  var enableTypes = opts.enableTypes || [&#x27;json&#x27;, &#x27;form&#x27;];
+  var enableForm = checkEnable(enableTypes, &#x27;form&#x27;);
+  var enableJson = checkEnable(enableTypes, &#x27;json&#x27;);
+  var enableText = checkEnable(enableTypes, &#x27;text&#x27;);
+
+  opts.detectJSON = undefined;
+  opts.onerror = undefined;
+
+  // force co-body return raw body
+  opts.returnRawBody = true;
+
+  // default json types
+  var jsonTypes = [
+    &#x27;application/json&#x27;,
+    &#x27;application/json-patch+json&#x27;,
+    &#x27;application/vnd.api+json&#x27;,
+    &#x27;application/csp-report&#x27;,
+  ];
+
+  // default form types
+  var formTypes = [
+    &#x27;application/x-www-form-urlencoded&#x27;,
+  ];
+
+  // default text types
+  var textTypes = [
+    &#x27;text/plain&#x27;,
+  ];
+
+  var jsonOpts = formatOptions(opts, &#x27;json&#x27;);
+  var formOpts = formatOptions(opts, &#x27;form&#x27;);
+  var textOpts = formatOptions(opts, &#x27;text&#x27;);
+
+  var extendTypes = opts.extendTypes || {};
+
+  extendType(jsonTypes, extendTypes.json);
+  extendType(formTypes, extendTypes.form);
+  extendType(textTypes, extendTypes.text);
+
+  return function *bodyParser(next) {
+    if (this.request.body !== undefined) return yield next;
+    if (this.disableBodyParser) return yield next;
+    try {
+      var res = yield parseBody(this);
+      this.request.body = &#x27;parsed&#x27; in res ? res.parsed : {};
+      if (this.request.rawBody === undefined) this.request.rawBody = res.raw;
+    } catch (err) {
+      if (onerror) {
+        onerror(err, this);
+      } else {
+        throw err;
+      }
+    }
+    yield next;
+  };
+
+  function* parseBody(ctx) {
+    if (enableJson &#x26;&#x26; ((detectJSON &#x26;&#x26; detectJSON(ctx)) || ctx.request.is(jsonTypes))) {
+      return yield parse.json(ctx, jsonOpts);
+    }
+    if (enableForm &#x26;&#x26; ctx.request.is(formTypes)) {
+      return yield parse.form(ctx, formOpts);
+    }
+    if (enableText &#x26;&#x26; ctx.request.is(textTypes)) {
+      return yield parse.text(ctx, textOpts) || &#x27;&#x27;;
+    }
+    return {};
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.compress" id="apidoc.element.koa-middlewares.compress">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>compress
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compress = function (options) {
+  options = options || {}
+
+  var filter = options.filter || compressible
+
+  var threshold = !options.threshold ? 1024
+    : typeof options.threshold === &#x27;number&#x27; ? options.threshold
+    : typeof options.threshold === &#x27;string&#x27; ? bytes(options.threshold)
+    : 1024
+
+  return function* compress(next) {
+    this.vary(&#x27;Accept-Encoding&#x27;)
+
+    yield* next
+
+    var body = this.body
+    if (!body) return
+    if (this.compress === false) return
+    if (this.request.method === &#x27;HEAD&#x27;) return
+    if (status.empty[this.response.status]) return
+    if (this.response.get(&#x27;Content-Encoding&#x27;)) return
+
+    // forced compression or implied
+    if (!(this.compress === true || filter(this.response.type))) return
+
+    // identity
+    var encoding = this.acceptsEncodings(&#x27;gzip&#x27;, &#x27;deflate&#x27;, &#x27;identity&#x27;)
+    if (!encoding) this.throw(406, &#x27;supported encodings: gzip, deflate, identity&#x27;)
+    if (encoding === &#x27;identity&#x27;) return
+
+    // json
+    if (isJSON(body)) body = this.body = JSON.stringify(body)
+
+    // threshold
+    if (threshold &#x26;&#x26; this.response.length &#x3c; threshold) return
+
+    this.set(&#x27;Content-Encoding&#x27;, encoding)
+    this.res.removeHeader(&#x27;Content-Length&#x27;)
+
+    var stream =
+    this.body = encodingMethods[encoding](options)
+
+    if (body instanceof Stream) {
+      body.pipe(stream)
+    } else {
+      stream.end(body)
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var app = koa();
+
+app.use(middlewares.bodyParser());
+app.use(middlewares.router(app));
+app.use(middlewares.conditional());
+app.use(middlewares.etag());
+app.use(middlewares.<span class="apidocCodeKeywordSpan">compress</span>());
+middlewares.csrf(app);
+
+app.use(function *() {
+  this.body = &#x27;hello koa-middlewares&#x27;;
+});
+
+app.listen(7001);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.conditional" id="apidoc.element.koa-middlewares.conditional">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>conditional
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function conditional() {
+  return function *conditional(next){
+    yield* next;
+    if (this.fresh) {
+      this.status = 304;
+      this.body = null;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var koa = require(&#x27;koa&#x27;);
+var middlewares = require(&#x27;koa-middlewares&#x27;);
+
+var app = koa();
+
+app.use(middlewares.bodyParser());
+app.use(middlewares.router(app));
+app.use(middlewares.<span class="apidocCodeKeywordSpan">conditional</span>());
+app.use(middlewares.etag());
+app.use(middlewares.compress());
+middlewares.csrf(app);
+
+app.use(function *() {
+  this.body = &#x27;hello koa-middlewares&#x27;;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.cookieSession" id="apidoc.element.koa-middlewares.cookieSession">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>cookieSession
+        <span class="apidocSignatureSpan">(opts, app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cookieSession = function (opts, app){
+  // session(app[, opts])
+  if (opts &#x26;&#x26; typeof opts.use === &#x27;function&#x27;) {
+    var tmp = app;
+    app = opts;
+    opts = tmp;
+  }
+
+  opts = opts || {};
+
+  // key
+  opts.key = opts.key || &#x27;koa:sess&#x27;;
+
+  // back-compat maxage
+  if (!(&#x27;maxAge&#x27; in opts)) opts.maxAge = opts.maxage;
+
+  // defaults
+  if (null == opts.overwrite) opts.overwrite = true;
+  if (null == opts.httpOnly) opts.httpOnly = true;
+  if (null == opts.signed) opts.signed = true;
+
+  debug(&#x27;session options %j&#x27;, opts);
+
+  if (!app || typeof app.use !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;app instance required: `session(opts, app)`&#x27;);
+  }
+
+  // setup encoding/decoding
+  if (typeof opts.encode !== &#x27;function&#x27;) {
+    opts.encode = encode
+  }
+  if (typeof opts.decode !== &#x27;function&#x27;) {
+    opts.decode = decode
+  }
+
+  // to pass to Session()
+  app.context.sessionKey = opts.key;
+
+  app.context.__defineGetter__(&#x27;session&#x27;, function(){
+    var sess = this._sess;
+    // already retrieved
+    if (sess) return sess;
+
+    // unset
+    if (false === sess) return null;
+
+    var json = this.cookies.get(opts.key, opts);
+
+    if (json) {
+      debug(&#x27;parse %s&#x27;, json);
+      try {
+        // make sure sessionOptions exists
+        initSessionOptions(this, opts);
+        var obj = opts.decode(json);
+        if (typeof opts.valid === &#x27;function&#x27; &#x26;&#x26; !opts.valid(this, obj)) {
+          // valid session value fail, ignore this session
+          sess = new Session(this);
+          json = obj;
+          debug(&#x27;invalid %j&#x27;, obj);
+        } else {
+          sess = new Session(this, obj);
+          // make prev a different object from sess
+          json = opts.decode(json);
+        }
+      } catch (err) {
+        // backwards compatibility:
+        // create a new session if parsing fails.
+        // new Buffer(string, &#x27;base64&#x27;) does not seem to crash
+        // when `string` is not base64-encoded.
+        // but `JSON.parse(string)` will crash.
+        debug(&#x27;decode %j error: %s&#x27;, json, err);
+        if (!(err instanceof SyntaxError)) throw err;
+        sess = new Session(this);
+        json = null;
+      }
+    } else {
+      debug(&#x27;new session&#x27;);
+      sess = new Session(this);
+    }
+
+    this._sess = sess;
+    this._prevjson = json;
+    return sess;
+  });
+
+  app.context.__defineSetter__(&#x27;session&#x27;, function(val){
+    if (null == val) return this._sess = false;
+    if (&#x27;object&#x27; == typeof val) return this._sess = new Session(this, val);
+    throw new Error(&#x27;this.session can only be set as null or an object.&#x27;);
+  });
+
+  return function* session(next){
+    // make sessionOptions independent in each request
+    initSessionOptions(this, opts);
+    try {
+      yield* next;
+    } catch (err) {
+      throw err;
+    } finally {
+      commit(this, this._prevjson, this._sess, opts);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+app.use(middlewares.logger());
+```
+
+* **koa-session**: cookie base session.
+
+```js
+app.use(middlewares.<span class="apidocCodeKeywordSpan">cookieSession</span>());
+```
+
+* **koa-generic-session**: A session like connect with memory,
+has friendly APIs for work with other Stores such as `redis`, `mongo`.
+* **koa-redis**: Work togather with `koa-generic-session`, provide a redis store from koa-sess.
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.csrf" id="apidoc.element.koa-middlewares.csrf">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>csrf
+        <span class="apidocSignatureSpan">(app, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">csrf = function (app, opts) {
+  if (isApp(app)) {
+    opts = opts || {}
+  } else {
+    opts = app || {}
+    app = null
+  }
+
+  var tokens = require(&#x27;csrf&#x27;)(opts)
+  var middleware = opts.middleware || exports.middleware
+
+  if (app) {
+    define(app)
+    return app
+  }
+
+  return function* csrf(next) {
+    define(this)
+    yield middleware.call(this, next)
+  }
+
+  function define(ctx) {
+    var context = ctx.context || ctx
+    var response = ctx.response
+    var request = ctx.request
+
+<span class="apidocCodeCommentSpan">    /*
+     * Lazily creates a CSRF token.
+     * Creates one per request.
+     *
+     * @api public
+     */
+</span>
+    context.__defineGetter__(&#x27;csrf&#x27;, function () {
+      if (this._csrf) return this._csrf
+      if (!this.session) return null
+      var secret = this.session.secret
+        || (this.session.secret = tokens.secretSync())
+      return this._csrf = tokens.create(secret)
+    })
+
+    response.__defineGetter__(&#x27;csrf&#x27;, function () {
+      return this.ctx.csrf
+    })
+
+    /**
+     * Asserts that a CSRF token exists and is valid.
+     * Throws a 403 error otherwise.
+     * var body = yield this.request.json()
+     * try {
+     *   this.assertCSRF(body)
+     * } catch (err) {
+     *   this.status = 403
+     *   this.body = {
+     *     message: &#x27;invalid CSRF token&#x27;
+     *   }
+     * }
+     *
+     * @param {Object} body
+     * @return {Context} this
+     * @api public
+     **/
+
+    context.assertCSRF =
+    context.assertCsrf = function (body) {
+      // no session
+      var secret = this.session.secret
+      if (!secret) this.throw(403, &#x27;secret is missing&#x27;)
+
+      var token = (body &#x26;&#x26; body._csrf)
+        || (!opts.disableQuery &#x26;&#x26; this.query &#x26;&#x26; this.query._csrf)
+        || (this.get(&#x27;x-csrf-token&#x27;))
+        || (this.get(&#x27;x-xsrf-token&#x27;))
+        || body
+      if (!token) this.throw(403, &#x27;token is missing&#x27;)
+      if (!tokens.verify(secret, token)) this.throw(403, &#x27;invalid csrf token&#x27;)
+
+      return this
+    }
+
+    request.assertCSRF =
+    request.assertCsrf = function (body) {
+      this.ctx.assertCsrf(body)
+      return this
+    }
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var app = koa();
+
+app.use(middlewares.bodyParser());
+app.use(middlewares.router(app));
+app.use(middlewares.conditional());
+app.use(middlewares.etag());
+app.use(middlewares.compress());
+middlewares.<span class="apidocCodeKeywordSpan">csrf</span>(app);
+
+app.use(function *() {
+  this.body = &#x27;hello koa-middlewares&#x27;;
+});
+
+app.listen(7001);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.ejs" id="apidoc.element.koa-middlewares.ejs">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>ejs
+        <span class="apidocSignatureSpan">(app, settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ejs = function (app, settings) {
+  if (app.context.render) {
+    return;
+  }
+
+  if (!settings || !settings.root) {
+    throw new Error(&#x27;settings.root required&#x27;);
+  }
+
+  settings.root = path.resolve(process.cwd(), settings.root);
+
+<span class="apidocCodeCommentSpan">  /**
+  * cache the generate package
+  * @type {Object}
+  */
+</span>  var cache = Object.create(null);
+
+  copy(defaultSettings).to(settings);
+
+  settings.viewExt = settings.viewExt
+    ? &#x27;.&#x27; + settings.viewExt.replace(/^\./, &#x27;&#x27;)
+    : &#x27;&#x27;;
+
+  /**
+   * generate html with view name and options
+   * @param {String} view
+   * @param {Object} options
+   * @return {String} html
+   */
+  function *render(view, options) {
+    view += settings.viewExt;
+    var viewPath = path.join(settings.root, view);
+    // get from cache
+    if (settings.cache &#x26;&#x26; cache[viewPath]) {
+      return cache[viewPath].call(options.scope, options);
+    }
+
+    var tpl = yield fs.readFile(viewPath, &#x27;utf8&#x27;);
+    var fn = ejs.compile(tpl, {
+      filename: viewPath,
+      _with: settings._with,
+      compileDebug: settings.debug,
+      delimiter: settings.delimiter
+    });
+    if (settings.cache) {
+      cache[viewPath] = fn;
+    }
+
+    return fn.call(options.scope, options);
+  }
+
+
+  app.context.render = function *(view, _context) {
+    var context = {};
+    merge(context, this.state);
+    merge(context, _context);
+
+    var html = yield *render(view, context);
+
+    var layout = context.layout === false ? false : (context.layout || settings.layout);
+    if (layout) {
+      // if using layout
+      context.body = html;
+      html = yield *render(layout, context);
+    }
+
+    var writeResp = context.writeResp === false ? false : (context.writeResp || settings.writeResp);
+    if (writeResp) {
+      //normal operation
+      this.type = &#x27;html&#x27;;
+      this.body = html;
+    }else{
+      //only return the html
+      return html;
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.etag" id="apidoc.element.koa-middlewares.etag">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>etag
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function etag(options) {
+  return function *etag(next){
+    yield* next;
+
+    // no body
+    var body = this.body;
+    if (!body || this.response.get(&#x27;ETag&#x27;)) return;
+
+    // type
+    var status = this.status / 100 | 0;
+
+    // 2xx
+    if (2 != status) return;
+
+    // hash
+    var etag;
+    if (body instanceof Stream) {
+      if (!body.path) return;
+      var s = yield fs.stat(body.path).catch(noop);
+      if (!s) return;
+      etag = calculate(s, options);
+    } else if ((&#x27;string&#x27; == typeof body) || Buffer.isBuffer(body)) {
+      etag = calculate(body, options);
+    } else {
+      etag = calculate(JSON.stringify(body), options);
+    }
+
+    // add etag
+    if (etag) this.response.etag = etag;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var middlewares = require(&#x27;koa-middlewares&#x27;);
+
+var app = koa();
+
+app.use(middlewares.bodyParser());
+app.use(middlewares.router(app));
+app.use(middlewares.conditional());
+app.use(middlewares.<span class="apidocCodeKeywordSpan">etag</span>());
+app.use(middlewares.compress());
+middlewares.csrf(app);
+
+app.use(function *() {
+  this.body = &#x27;hello koa-middlewares&#x27;;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.favicon" id="apidoc.element.koa-middlewares.favicon">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>favicon
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">favicon = function (path, options){
+  var icon;
+
+  if (path) path = resolve(path);
+  options = options || {};
+
+  var maxAge = options.maxAge == null
+    ? 86400000
+    : Math.min(Math.max(0, options.maxAge), 31556926000);
+
+  return function *favicon(next){
+    if (&#x27;/favicon.ico&#x27; != this.path) return yield next;
+
+    if (!path) return;
+
+    if (&#x27;GET&#x27; !== this.method &#x26;&#x26; &#x27;HEAD&#x27; !== this.method) {
+      this.status = &#x27;OPTIONS&#x27; == this.method ? 200 : 405;
+      this.set(&#x27;Allow&#x27;, &#x27;GET, HEAD, OPTIONS&#x27;);
+      return;
+    }
+
+    if (!icon) icon = yield fs.readFile(path);
+
+    this.set(&#x27;Cache-Control&#x27;, &#x27;public, max-age=&#x27; + (maxAge / 1000 | 0));
+    this.type = &#x27;image/x-icon&#x27;;
+    this.body = icon;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+app.use(middlewares.conditional());
+app.use(middlewares.etag());
+```
+
+* **koa-favicon**: Bounce favicon requests with a 404.
+
+```js
+app.use(middlewares.<span class="apidocCodeKeywordSpan">favicon</span>());
+```
+
+* **koa-safe-jsonp**: A safe jsonp plugins for koa.
+
+```js
+middlewares.jsonp(app);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.jsonp" id="apidoc.element.koa-middlewares.jsonp">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>jsonp
+        <span class="apidocSignatureSpan">(app, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function jsonp(app, options) {
+  options = options || {};
+  var callback = options.callback || &#x27;callback&#x27;;
+
+  Object.defineProperty(app.context, &#x27;jsonp&#x27;, {
+    set: function (obj) {
+      var jsonpFunction = this.query[callback];
+      if (!jsonpFunction) {
+        return this.body = obj;
+      }
+
+      this.set(&#x27;X-Content-Type-Options&#x27;, &#x27;nosniff&#x27;);
+      this.type = &#x27;js&#x27;;
+      this.body = jsonpBody(obj, jsonpFunction, options);
+    },
+    configurable: true
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+app.use(middlewares.favicon());
+```
+
+* **koa-safe-jsonp**: A safe jsonp plugins for koa.
+
+```js
+middlewares.<span class="apidocCodeKeywordSpan">jsonp</span>(app);
+
+app.use(function* () {
+  this.jsonp = {foo: &#x27;bar&#x27;};
+});
+```
+
+* **koa-logger**: Development style logger.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.logger" id="apidoc.element.koa-middlewares.logger">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>logger
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dev(opts) {
+  return function *logger(next) {
+    // request
+    var start = new Date;
+    console.log(&#x27;  &#x27; + chalk.gray(&#x27;&#x3c;--&#x27;)
+      + &#x27; &#x27; + chalk.bold(&#x27;%s&#x27;)
+      + &#x27; &#x27; + chalk.gray(&#x27;%s&#x27;),
+        this.method,
+        this.originalUrl);
+
+    try {
+      yield next;
+    } catch (err) {
+      // log uncaught downstream errors
+      log(this, start, null, err);
+      throw err;
+    }
+
+    // calculate the length of a streaming response
+    // by intercepting the stream with a counter.
+    // only necessary if a content-length header is currently not set.
+    var length = this.response.length;
+    var body = this.body;
+    var counter;
+    if (null == length &#x26;&#x26; body &#x26;&#x26; body.readable) {
+      this.body = body
+        .pipe(counter = Counter())
+        .on(&#x27;error&#x27;, this.onerror);
+    }
+
+    // log when the response is finished or closed,
+    // whichever happens first.
+    var ctx = this;
+    var res = this.res;
+
+    var onfinish = done.bind(null, &#x27;finish&#x27;);
+    var onclose = done.bind(null, &#x27;close&#x27;);
+
+    res.once(&#x27;finish&#x27;, onfinish);
+    res.once(&#x27;close&#x27;, onclose);
+
+    function done(event){
+      res.removeListener(&#x27;finish&#x27;, onfinish);
+      res.removeListener(&#x27;close&#x27;, onclose);
+      log(ctx, start, counter ? counter.length : length, null, event);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.jsonp = {foo: &#x27;bar&#x27;};
+});
+```
+
+* **koa-logger**: Development style logger.
+
+```js
+app.use(middlewares.<span class="apidocCodeKeywordSpan">logger</span>());
+```
+
+* **koa-session**: cookie base session.
+
+```js
+app.use(middlewares.cookieSession());
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.onerror" id="apidoc.element.koa-middlewares.onerror">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>onerror
+        <span class="apidocSignatureSpan">(app, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function onerror(app, options) {
+  options = options || {};
+
+  const defaultOptions = {
+    text: text,
+    json: json,
+    redirect: null,
+    template: path.join(__dirname, &#x27;error.html&#x27;),
+    accepts: null,
+  };
+
+  copy(defaultOptions).to(options);
+  if (!options.html) {
+    options.html = createHtmlHandler(options.template);
+  }
+
+  app.context.onerror = function(err) {
+    // don&#x27;t do anything if there is no error.
+    // this allows you to pass `this.onerror`
+    // to node-style callbacks.
+    if (err == null) {
+      return;
+    }
+
+    // wrap non-error object
+    if (!(err instanceof Error)) {
+      err = new Error(&#x27;non-error thrown: &#x27; + err);
+    }
+
+    // delegate
+    this.app.emit(&#x27;error&#x27;, err, this);
+
+    // nothing we can do here other
+    // than delegate to the app-level
+    // handler and log.
+    if (this.headerSent || !this.writable) {
+      err.headerSent = true;
+      return;
+    }
+
+    // ENOENT support
+    if (err.code === &#x27;ENOENT&#x27;) {
+      err.status = 404;
+    }
+
+    if (typeof err.status !== &#x27;number&#x27; || !http.STATUS_CODES[err.status]) {
+      err.status = 500;
+    }
+    this.status = err.status;
+
+    this.set(err.headers);
+
+    let type = &#x27;text&#x27;;
+    if (options.accepts) {
+      type = options.accepts.call(this, &#x27;html&#x27;, &#x27;text&#x27;, &#x27;json&#x27;);
+    } else {
+      type = this.accepts(&#x27;html&#x27;, &#x27;text&#x27;, &#x27;json&#x27;);
+    }
+    type = type || &#x27;text&#x27;;
+    if (options.all) {
+      options.all.call(this, err);
+    } else {
+      if (options.redirect &#x26;&#x26; type !== &#x27;json&#x27;) {
+        this.redirect(options.redirect);
+      } else {
+        options[type].call(this, err);
+        this.type = type;
+      }
+    }
+
+    if (type === &#x27;json&#x27;) {
+      this.body = JSON.stringify(this.body);
+    }
+    this.res.end(this.body);
+  };
+
+
+
+<span class="apidocCodeCommentSpan">  /**
+   * default text error handler
+   * @param {Error} err
+   */
+</span>
+  function text(err) {
+    // unset all headers, and set those specified
+    this.res._headers = {};
+    this.set(err.headers);
+
+    this.body = isDev || err.expose
+      ? err.message
+      : http.STATUS_CODES[this.status];
+  }
+
+  /**
+   * default json error handler
+   * @param {Error} err
+   */
+
+  function json(err) {
+    this.body = isDev || err.expose
+      ? { error: err.message }
+      : { error: http.STATUS_CODES[this.status] };
+  }
+
+  return app;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.redisStore" id="apidoc.element.koa-middlewares.redisStore">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>redisStore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">redisStore = function (options) {
+  if (!(this instanceof RedisStore)) {
+    return new RedisStore(options);
+  }
+  EventEmitter.call(this);
+  options = options || {};
+
+  var client;
+  options.auth_pass = options.auth_pass || options.pass || null;     // For backwards compatibility
+  options.path = options.path || options.socket || null;             // For backwards compatibility
+  if (!options.client) {
+    debug(&#x27;Init redis new client&#x27;);
+    client = redis.createClient(options);
+  } else {
+    if (options.duplicate) {                                         // Duplicate client and update with options provided
+      debug(&#x27;Duplicating provided client with new options (if provided)&#x27;);
+      var dupClient = options.client;
+      delete options.client;
+      delete options.duplicate;
+      client = dupClient.duplicate(options);                         // Useful if you want to use the DB option without adjusting
+ the client DB outside koa-redis
+    } else {
+      debug(&#x27;Using provided client&#x27;);
+      client = options.client;
+    }
+  }
+
+  if (options.db) {
+    debug(&#x27;selecting db %s&#x27;, options.db)
+    client.select(options.db);
+    client.on(&#x27;connect&#x27;, function() {
+      client.send_anyways = true;
+      client.select(options.db);
+      client.send_anyways = false;
+    });
+  }
+
+  client.on(&#x27;error&#x27;, this.emit.bind(this, &#x27;error&#x27;));
+  client.on(&#x27;end&#x27;, this.emit.bind(this, &#x27;end&#x27;));
+  client.on(&#x27;end&#x27;, this.emit.bind(this, &#x27;disconnect&#x27;));              // For backwards compatibility
+  client.on(&#x27;connect&#x27;, this.emit.bind(this, &#x27;connect&#x27;));
+  client.on(&#x27;reconnecting&#x27;, this.emit.bind(this, &#x27;reconnecting&#x27;));
+  client.on(&#x27;ready&#x27;, this.emit.bind(this, &#x27;ready&#x27;));
+  client.on(&#x27;warning&#x27;, this.emit.bind(this, &#x27;warning&#x27;));
+  this.on(&#x27;connect&#x27;, function() {
+    debug(&#x27;connected to redis&#x27;);
+    this.connected = client.connected;
+  });
+  this.on(&#x27;ready&#x27;, function() {
+    debug(&#x27;redis ready&#x27;);
+  });
+  this.on(&#x27;end&#x27;, function() {
+    debug(&#x27;redis ended&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test error
+<span class="apidocCodeCommentSpan">  /* istanbul ignore next */
+</span>  this.on(&#x27;error&#x27;, function() {
+    debug(&#x27;redis error&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test reconnect
+  /* istanbul ignore next */
+  this.on(&#x27;reconnecting&#x27;, function() {
+    debug(&#x27;redis reconnecting&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test warning
+  /* istanbul ignore next */
+  this.on(&#x27;warning&#x27;, function() {
+    debug(&#x27;redis warning&#x27;);
+    this.connected = client.connected;
+  });
+
+  //wrap redis
+  this._redisClient = client;
+  this.client = redisWrapper(client);
+  this.connected = client.connected;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.resourceRouter" id="apidoc.element.koa-middlewares.resourceRouter">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>resourceRouter
+        <span class="apidocSignatureSpan">(name, actions, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Resource(name, actions, options) {
+  if (!(this instanceof Resource)) {
+    var args = Array.prototype.slice.call(arguments);
+    var resource = Object.create(Resource.prototype);
+    Resource.apply(resource, args);
+    return resource;
+  }
+  options = options || {};
+  this.name = typeof name == &#x27;string&#x27; ? name : null;
+
+  this.id = this.name ? pluralize.singular(name) : &#x27;id&#x27;;
+  this.base = this.name ? &#x27;/&#x27; + this.name : &#x27;/&#x27;;
+
+  var middleware = Array.prototype.slice.call(arguments, this.name ? 1 : 0);
+
+  this.actions = middleware.pop();
+
+  // if last object has `methods` property or `id` property, assume it is `options`
+  if (this.actions.methods || this.actions.id) {
+    options = this.actions;
+    this.actions = middleware.pop();
+  }
+
+  this.routes = [];
+  this.resources = [];
+
+  this.options = {
+    id: options.id,
+    methods: defaults(options.methods || {}, {
+      &#x27;options&#x27;: &#x27;OPTIONS&#x27;,
+      &#x27;new&#x27;:     &#x27;GET&#x27;,
+      &#x27;create&#x27;:  &#x27;POST&#x27;,
+      &#x27;edit&#x27;:    &#x27;GET&#x27;,
+      &#x27;update&#x27;:  &#x27;PUT&#x27;,
+      &#x27;index&#x27;:   &#x27;GET&#x27;,
+      &#x27;list&#x27;:    &#x27;GET&#x27;,
+      &#x27;read&#x27;:    &#x27;GET&#x27;,
+      &#x27;show&#x27;:    &#x27;GET&#x27;,
+      &#x27;destroy&#x27;: &#x27;DELETE&#x27;,
+      &#x27;remove&#x27;:  &#x27;DELETE&#x27;
+    })
+  };
+
+  // Set a custom id param name if one was provided.
+  this.id = this.options.id || this.id;
+
+  // create route definition (used for routing) for each resource action
+  Object.keys(this.actions).forEach(function(name) {
+    var action = this.actions[name];
+    var url = this.base;
+    var urlTrailing = this.base;
+    var params = [];
+
+    if (!this.options.methods[name]) return;
+
+    if (url[url.length-1] != &#x27;/&#x27;) {
+      urlTrailing = url + &#x27;/&#x27;;
+    }
+
+    if (name == &#x27;new&#x27;) {
+      url = urlTrailing + &#x27;new&#x27;;
+    }
+    else if (name == &#x27;edit&#x27;) {
+      url = urlTrailing + &#x27;:&#x27; + this.id + &#x27;/edit&#x27;;
+    }
+    else if (name.match(/(show|read|update|remove|destroy)/)) {
+      url = urlTrailing + &#x27;:&#x27; + this.id;
+    }
+
+    // compose multiple action middleware
+    if (action instanceof Array) {
+      this.actions[name] = compose(action);
+    }
+
+    // compose resource middleware
+    if (middleware.length) {
+      this.actions[name] = compose(middleware.concat(Array.isArray(action) ? action : [action]));
+    }
+
+    this.routes.push({
+      method: this.options.methods[name].toUpperCase(),
+      url: url,
+      regexp: pathToRegExp(url, params),
+      params: params,
+      action: this.actions[name]
+    });
+  }, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.rewrite" id="apidoc.element.koa-middlewares.rewrite">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>rewrite
+        <span class="apidocSignatureSpan">(src, dst)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rewrite(src, dst) {
+  var keys = [];
+  var re = toRegexp(src, keys);
+  var map = toMap(keys);
+
+  debug(&#x27;rewrite %s -&#x3e; %s    %s&#x27;, src, dst, re);
+
+  return function*(next){
+    var orig = this.path;
+    var m = re.exec(orig);
+
+    if (m) {
+      this.path = dst.replace(/\$(\d+)|(?::(\w+))/g, function(_, n, name){
+        if (name) return m[map[name].index + 1];
+        return m[n];
+      });
+
+      debug(&#x27;rewrite %s -&#x3e; %s&#x27;, orig, this.path);
+
+      yield* next;
+
+      this.path = orig;
+      return;
+    }
+
+    yield* next;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.body = [{name: &#x27;Lee&#x27;}, {name: &#x27;Han&#x27;}];
+});
+```
+
+* **koa-rewrite**: URL rewrite middleware.
+
+```js
+app.use(middlewares.<span class="apidocCodeKeywordSpan">rewrite</span>(&#x27;/js/*&#x27;, &#x27;/public/assets/js/$1&#x27;));
+```
+
+* **koa-rt**: Log response time, support custom with microtime.
+
+```js
+var microtime = require(&#x27;microtime&#x27;);
+app.use(middlewares.rt({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router" id="apidoc.element.koa-middlewares.router">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>router
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Router(opts) {
+  if (!(this instanceof Router)) {
+    return new Router(opts);
+  }
+
+  this.opts = opts || {};
+  this.methods = this.opts.methods || [
+    &#x27;HEAD&#x27;,
+    &#x27;OPTIONS&#x27;,
+    &#x27;GET&#x27;,
+    &#x27;PUT&#x27;,
+    &#x27;PATCH&#x27;,
+    &#x27;POST&#x27;,
+    &#x27;DELETE&#x27;
+  ];
+
+  this.params = {};
+  this.stack = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var koa = require(&#x27;koa&#x27;);
+var middlewares = require(&#x27;koa-middlewares&#x27;);
+
+var app = koa();
+
+app.use(middlewares.bodyParser());
+app.use(middlewares.<span class="apidocCodeKeywordSpan">router</span>(app));
+app.use(middlewares.conditional());
+app.use(middlewares.etag());
+app.use(middlewares.compress());
+middlewares.csrf(app);
+
+app.use(function *() {
+this.body = &#x27;hello koa-middlewares&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.rt" id="apidoc.element.koa-middlewares.rt">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>rt
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function responseTime(options) {
+  options = options || {};
+  var timer = options.timer || Date;
+  var headerName = options.headerName || &#x27;X-Response-Time&#x27;;
+
+  return function *responseTime(next){
+    var start = timer.now();
+    yield* next;
+    var delta = timer.now() - start;
+    this.set(headerName, delta);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+app.use(middlewares.rewrite(&#x27;/js/*&#x27;, &#x27;/public/assets/js/$1&#x27;));
+```
+
+* **koa-rt**: Log response time, support custom with microtime.
+
+```js
+var microtime = require(&#x27;microtime&#x27;);
+app.use(middlewares.<span class="apidocCodeKeywordSpan">rt</span>({
+  timer: microtime
+}));
+```
+
+* **koa-static-cache**: Static file serving from memory.
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.session" id="apidoc.element.koa-middlewares.session">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>session
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">session = function (options) {
+  options = options || {};
+  let key = options.key || &#x27;koa.sid&#x27;;
+  let client = options.store || new MemoryStore();
+  let errorHandler = options.errorHandler || defaultErrorHanlder;
+  let reconnectTimeout = options.reconnectTimeout || 10000;
+
+  let store = new Store(client, {
+    ttl: options.ttl,
+    prefix: options.prefix
+  });
+
+  let genSid = options.genSid || uid.sync;
+  let valid = options.valid || noop;
+  let beforeSave = options.beforeSave || noop;
+
+  let cookie = options.cookie || {};
+  copy(defaultCookie).to(cookie);
+
+  let storeStatus = &#x27;available&#x27;;
+  let waitStore = Promise.resolve();
+
+  // notify user that this store is not
+  // meant for a production environment
+  if (&#x27;production&#x27; === process.env.NODE_ENV
+   &#x26;&#x26; client instanceof MemoryStore) console.warn(warning);
+
+  let sessionIdStore = options.sessionIdStore || {
+
+    get: function() {
+      return this.cookies.get(key, cookie);
+    },
+
+    set: function(sid, session) {
+      this.cookies.set(key, sid, session.cookie);
+    },
+
+    reset: function() {
+      this.cookies.set(key, null);
+    }
+  };
+
+  store.on(&#x27;disconnect&#x27;, function() {
+    if (storeStatus !== &#x27;available&#x27;) return;
+    storeStatus = &#x27;pending&#x27;;
+    waitStore = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        if (storeStatus === &#x27;pending&#x27;) storeStatus = &#x27;unavailable&#x27;;
+        reject(new Error(&#x27;session store is unavailable&#x27;));
+      }, reconnectTimeout);
+      store.once(&#x27;connect&#x27;, resolve);
+    });
+
+  });
+
+  store.on(&#x27;connect&#x27;, function() {
+    storeStatus = &#x27;available&#x27;;
+    waitStore = Promise.resolve();
+  });
+
+  // save empty session hash for compare
+  const EMPTY_SESSION_HASH = hash(generateSession());
+
+  return options.defer ? deferSession : session;
+
+  function addCommonAPI() {
+
+    this._sessionSave = null;
+
+    // more flexible
+    this.__defineGetter__(&#x27;sessionSave&#x27;, function () {
+      return this._sessionSave;
+    });
+
+    this.__defineSetter__(&#x27;sessionSave&#x27;, function (save) {
+      this._sessionSave = save;
+    });
+  }
+
+<span class="apidocCodeCommentSpan">  /**
+   * generate a new session
+   */
+</span>  function generateSession() {
+    let session = {};
+    //you can alter the cookie options in nexts
+    session.cookie = {};
+    for (let prop in cookie) {
+      session.cookie[prop] = cookie[prop];
+    }
+    compatMaxage(session.cookie);
+    return session;
+  }
+
+  /**
+   * check url match cookie&#x27;s path
+   */
+  function matchPath(ctx) {
+    let pathname = parse(ctx).pathname;
+    let cookiePath = cookie.path || &#x27;/&#x27;;
+    if (cookiePath === &#x27;/&#x27;) {
+      return true;
+    }
+    if (pathname.indexOf(cookiePath) !== 0) {
+      debug(&#x27;cookie path not match&#x27;);
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * get session from store
+   *   get sessionId from cookie
+   *   save sessionId into context
+   *   get session from store
+   */
+  function *getSession() {
+    if (!matchPath(this)) return;
+    if (storeStatus === &#x27;pending&#x27;) {
+      debug(&#x27;store is disconnect and pending&#x27;);
+      yield waitStore;
+    } else if (storeStatus === &#x27;unavailable&#x27;) {
+      debug(&#x27;store is unavailable&#x27;);
+      throw new Error(&#x27;session store is unavailable&#x27;);
+    }
+
+    if (!this.sessionId) {
+      this.sessionId = sessionIdStore.get.call(this);
+    }
+
+    let session;
+    let isNew = false;
+    if (!this.sessionId) {
+      debug(&#x27;session id not exist, generate a new one&#x27;);
+      session = generateSession();
+      this.sessionId = genSid.call(this, 24);
+      isNew = true;
+    } else {
+      try {
+        session = yield store.get(this.sessionId);
+        debug(&#x27;get session %j with key %s&#x27;, session, this.sessionId);
+      } catch (err) {
+        if (err.code === &#x27;ENOENT&#x27;) {
+          debug(&#x27;get session error, code = ENOENT&#x27;);
+        } else {
+          debug(&#x27;get session error: &#x27;, err.message);
+          errorHandler(err, &#x27;get&#x27;, this);
+        }
+      }
+    }
+
+    // make sure the session is still valid
+    if (!session ||
+      !valid(this, session)) {
+      debug(&#x27;session is empty or invalid&#x27;);
+      session = generateSession();
+      this.sessionId = genSid.call(this, 24);
+      sessionIdStore.re ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+* **koa-generic-session**: A session like connect with memory,
+has friendly APIs for work with other Stores such as `redis`, `mongo`.
+* **koa-redis**: Work togather with `koa-generic-session`, provide a redis store from koa-sess.
+
+```js
+app.use(middlewares.<span class="apidocCodeKeywordSpan">session</span>({
+store: middlewares.RedisStore(),
+defer: true
+}));
+
+app.use(function *() {
+var session = yield this.session;
+session.foo = &#x27;bar&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.session.MemoryStore" id="apidoc.element.koa-middlewares.session.MemoryStore">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>session.MemoryStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">session.MemoryStore = function () {
+  this.sessions = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.staticCache" id="apidoc.element.koa-middlewares.staticCache">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>staticCache
+        <span class="apidocSignatureSpan">(dir, options, files)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function staticCache(dir, options, files) {
+  if (typeof dir === &#x27;object&#x27;) {
+    files = options
+    options = dir
+    dir = null
+  }
+
+  options = options || {}
+  options.prefix = (options.prefix || &#x27;&#x27;).replace(/\/$/, &#x27;&#x27;) + path.sep
+  files = files || options.files || Object.create(null)
+  dir = dir || options.dir || process.cwd()
+  var enableGzip = !!options.gzip
+  var filePrefix = path.normalize(options.prefix.replace(/^\//, &#x27;&#x27;))
+
+  // option.filter
+  var fileFilter = function () { return true }
+  if (Array.isArray(options.filter)) fileFilter = function (file) { return ~options.filter.indexOf(file) }
+  if (typeof options.filter === &#x27;function&#x27;) fileFilter = options.filter
+
+  if (options.preload !== false) {
+    readDir(dir).filter(fileFilter).forEach(function (name) {
+      loadFile(name, dir, options, files)
+    })
+  }
+
+  if (options.alias) {
+    Object.keys(options.alias).forEach(function (key) {
+      var value = options.alias[key]
+
+      if (files[value]) {
+        files[key] = files[value]
+
+        debug(&#x27;aliasing &#x27; + value + &#x27; as &#x27; + key)
+      }
+    })
+  }
+
+  return function* staticCache(next) {
+    // only accept HEAD and GET
+    if (this.method !== &#x27;HEAD&#x27; &#x26;&#x26; this.method !== &#x27;GET&#x27;) return yield next
+
+    // decode for `/%E4%B8%AD%E6%96%87`
+    // normalize for `//index`
+    var filename = safeDecodeURIComponent(path.normalize(this.path))
+
+    var file = files[filename]
+
+    // try to load file
+    if (!file) {
+      if (!options.dynamic) return yield next
+      if (path.basename(filename)[0] === &#x27;.&#x27;) return yield next
+      if (filename.charAt(0) === path.sep) filename = filename.slice(1)
+
+      // trim prefix
+      if (options.prefix !== path.sep) {
+        if (filename.indexOf(filePrefix) !== 0) return yield next
+        filename = filename.slice(filePrefix.length)
+      }
+
+      var s
+      try {
+        s = yield fs.stat(path.join(dir, filename))
+      } catch (err) {
+        return yield next
+      }
+      if (!s.isFile()) return yield next
+
+      file = loadFile(filename, dir, options, files)
+    }
+
+    this.status = 200
+
+    if (enableGzip) this.vary(&#x27;Accept-Encoding&#x27;)
+
+    if (!file.buffer) {
+      var stats = yield fs.stat(file.path)
+      if (stats.mtime &#x3e; file.mtime) {
+        file.mtime = stats.mtime
+        file.md5 = null
+        file.length = stats.size
+      }
+    }
+
+    this.response.lastModified = file.mtime
+    if (file.md5) this.response.etag = file.md5
+
+    if (this.fresh)
+      return this.status = 304
+
+    this.type = file.type
+    this.length = file.zipBuffer ? file.zipBuffer.length : file.length
+    this.set(&#x27;Cache-Control&#x27;, file.cacheControl || &#x27;public, max-age=&#x27; + file.maxAge)
+    if (file.md5) this.set(&#x27;Content-MD5&#x27;, file.md5)
+
+    if (this.method === &#x27;HEAD&#x27;)
+      return
+
+    var acceptGzip = this.acceptsEncodings(&#x27;gzip&#x27;) === &#x27;gzip&#x27;
+
+    if (file.zipBuffer) {
+      if (acceptGzip) {
+        this.set(&#x27;Content-Encoding&#x27;, &#x27;gzip&#x27;)
+        this.body = file.zipBuffer
+      } else {
+        this.body = file.buffer
+      }
+      return
+    }
+
+    var shouldGzip = enableGzip
+      &#x26;&#x26; file.length &#x3e; 1024
+      &#x26;&#x26; acceptGzip
+      &#x26;&#x26; compressible(file.type)
+
+    if (file.buffer) {
+      if (shouldGzip) {
+
+        var gzFile = files[filename + &#x27;.gz&#x27;]
+        if (options.usePrecompiledGzip &#x26;&#x26; gzFile &#x26;&#x26; gzFile.buffer) { // if .gz file already read from disk
+          file.zipBuffer = gzFile.buffer
+        } else {
+          file.zipBuffer = yield zlib.gzip(file.buffer)
+        }
+        this.set(&#x27;Content-Encoding&#x27;, &#x27;gzip&#x27;)
+        this.body = file.zipBuffer
+      } else {
+        this.body = file.buffer
+      }
+      return
+    }
+
+    var stream = fs.createReadStream(file.path)
+
+    // update file hash
+    if (!file.md5) {
+      var hash = crypto.createHash(&#x27;md5&#x27;)
+      stream.on(&#x27;data&#x27;, hash.update.bind(hash))
+      stream.on(&#x27;end&#x27;, function () {
+        file.md5 = hash.digest(&#x27;base64&#x27;)
+      })
+    }
+
+    this.body = stream
+    // enable gzip will remove content length
+    if (shouldGzip) {
+      this.remove(&#x27;Content-Length&#x27;)
+      this.set(&#x27;Content-Encoding&#x27;, &#x27;gzip&#x27;)
+      this.body = stream.pip ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  timer: microtime
+}));
+```
+
+* **koa-static-cache**: Static file serving from memory.
+
+```js
+app.use(middlewares.<span class="apidocCodeKeywordSpan">staticCache</span>(path.join(__dirname, &#x27;public&#x27;), {
+  buffer: true,
+  maxAge: 60 * 60 * 24 * 7,
+  dir: path.join(rootdir, &#x27;public&#x27;)
+}));
+```
+
+* **koa-compress**: Compress middleware for Koa, support `gzip` and `deflate`
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.RedisStore" id="apidoc.module.koa-middlewares.RedisStore">module koa-middlewares.RedisStore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.RedisStore.RedisStore" id="apidoc.element.koa-middlewares.RedisStore.RedisStore">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>RedisStore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RedisStore = function (options) {
+  if (!(this instanceof RedisStore)) {
+    return new RedisStore(options);
+  }
+  EventEmitter.call(this);
+  options = options || {};
+
+  var client;
+  options.auth_pass = options.auth_pass || options.pass || null;     // For backwards compatibility
+  options.path = options.path || options.socket || null;             // For backwards compatibility
+  if (!options.client) {
+    debug(&#x27;Init redis new client&#x27;);
+    client = redis.createClient(options);
+  } else {
+    if (options.duplicate) {                                         // Duplicate client and update with options provided
+      debug(&#x27;Duplicating provided client with new options (if provided)&#x27;);
+      var dupClient = options.client;
+      delete options.client;
+      delete options.duplicate;
+      client = dupClient.duplicate(options);                         // Useful if you want to use the DB option without adjusting
+ the client DB outside koa-redis
+    } else {
+      debug(&#x27;Using provided client&#x27;);
+      client = options.client;
+    }
+  }
+
+  if (options.db) {
+    debug(&#x27;selecting db %s&#x27;, options.db)
+    client.select(options.db);
+    client.on(&#x27;connect&#x27;, function() {
+      client.send_anyways = true;
+      client.select(options.db);
+      client.send_anyways = false;
+    });
+  }
+
+  client.on(&#x27;error&#x27;, this.emit.bind(this, &#x27;error&#x27;));
+  client.on(&#x27;end&#x27;, this.emit.bind(this, &#x27;end&#x27;));
+  client.on(&#x27;end&#x27;, this.emit.bind(this, &#x27;disconnect&#x27;));              // For backwards compatibility
+  client.on(&#x27;connect&#x27;, this.emit.bind(this, &#x27;connect&#x27;));
+  client.on(&#x27;reconnecting&#x27;, this.emit.bind(this, &#x27;reconnecting&#x27;));
+  client.on(&#x27;ready&#x27;, this.emit.bind(this, &#x27;ready&#x27;));
+  client.on(&#x27;warning&#x27;, this.emit.bind(this, &#x27;warning&#x27;));
+  this.on(&#x27;connect&#x27;, function() {
+    debug(&#x27;connected to redis&#x27;);
+    this.connected = client.connected;
+  });
+  this.on(&#x27;ready&#x27;, function() {
+    debug(&#x27;redis ready&#x27;);
+  });
+  this.on(&#x27;end&#x27;, function() {
+    debug(&#x27;redis ended&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test error
+<span class="apidocCodeCommentSpan">  /* istanbul ignore next */
+</span>  this.on(&#x27;error&#x27;, function() {
+    debug(&#x27;redis error&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test reconnect
+  /* istanbul ignore next */
+  this.on(&#x27;reconnecting&#x27;, function() {
+    debug(&#x27;redis reconnecting&#x27;);
+    this.connected = client.connected;
+  });
+  // No good way to test warning
+  /* istanbul ignore next */
+  this.on(&#x27;warning&#x27;, function() {
+    debug(&#x27;redis warning&#x27;);
+    this.connected = client.connected;
+  });
+
+  //wrap redis
+  this._redisClient = client;
+  this.client = redisWrapper(client);
+  this.connected = client.connected;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* **koa-generic-session**: A session like connect with memory,
+has friendly APIs for work with other Stores such as `redis`, `mongo`.
+* **koa-redis**: Work togather with `koa-generic-session`, provide a redis store from koa-sess.
+
+```js
+app.use(middlewares.session({
+store: middlewares.<span class="apidocCodeKeywordSpan">RedisStore</span>(),
+defer: true
+}));
+
+app.use(function *() {
+var session = yield this.session;
+session.foo = &#x27;bar&#x27;;
+this.body = this.session.foo;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.RedisStore.super_" id="apidoc.element.koa-middlewares.RedisStore.super_">
+        function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.RedisStore.prototype" id="apidoc.module.koa-middlewares.RedisStore.prototype">module koa-middlewares.RedisStore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.RedisStore.prototype.destroy" id="apidoc.element.koa-middlewares.RedisStore.prototype.destroy">
+        function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(sid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (sid) {
+  debug(&#x27;DEL %s&#x27;, sid);
+  yield this.client.del(sid);
+  debug(&#x27;DEL %s complete&#x27;, sid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.RedisStore.prototype.end" id="apidoc.element.koa-middlewares.RedisStore.prototype.end">
+        function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* () {                         // End connection SAFELY
+  debug(&#x27;quitting redis client&#x27;);
+  yield this.client.quit();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.RedisStore.prototype.get" id="apidoc.element.koa-middlewares.RedisStore.prototype.get">
+        function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>get
+        <span class="apidocSignatureSpan">(sid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (sid) {
+  var data = yield this.client.get(sid);
+  debug(&#x27;get session: %s&#x27;, data || &#x27;none&#x27;);
+  if (!data) {
+    return null;
+  }
+  try {
+    return JSON.parse(data.toString());
+  } catch (err) {
+    // ignore err
+    debug(&#x27;parse session error: %s&#x27;, err.message);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+* **koa-router**: Provide express-style routing using app.get, app.put, app.post.
+
+```js
+app.use(middlewares.router(app));
+app.<span class="apidocCodeKeywordSpan">get</span>(&#x27;/&#x27;, function *() {
+  this.body = &#x27;Hello koa-router&#x27;;
+});
+```
+
+* **koa-resource-router**: RESTful resource routing for koa.
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.RedisStore.prototype.quit" id="apidoc.element.koa-middlewares.RedisStore.prototype.quit">
+        function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>quit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* () {                         // End connection SAFELY
+  debug(&#x27;quitting redis client&#x27;);
+  yield this.client.quit();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.RedisStore.prototype.set" id="apidoc.element.koa-middlewares.RedisStore.prototype.set">
+        function <span class="apidocSignatureSpan">koa-middlewares.RedisStore.prototype.</span>set
+        <span class="apidocSignatureSpan">(sid, sess, ttl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (sid, sess, ttl) {
+  if (typeof ttl === &#x27;number&#x27;) {
+    ttl = Math.ceil(ttl / 1000);
+  }
+  sess = JSON.stringify(sess);
+  if (ttl) {
+    debug(&#x27;SETEX %s %s %s&#x27;, sid, ttl, sess);
+    yield this.client.setex(sid, ttl, sess);
+  } else {
+    debug(&#x27;SET %s %s&#x27;, sid, sess);
+    yield this.client.set(sid, sess);
+  }
+  debug(&#x27;SET %s complete&#x27;, sid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.ResourceRouter" id="apidoc.module.koa-middlewares.ResourceRouter">module koa-middlewares.ResourceRouter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.ResourceRouter.ResourceRouter" id="apidoc.element.koa-middlewares.ResourceRouter.ResourceRouter">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>ResourceRouter
+        <span class="apidocSignatureSpan">(name, actions, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Resource(name, actions, options) {
+  if (!(this instanceof Resource)) {
+    var args = Array.prototype.slice.call(arguments);
+    var resource = Object.create(Resource.prototype);
+    Resource.apply(resource, args);
+    return resource;
+  }
+  options = options || {};
+  this.name = typeof name == &#x27;string&#x27; ? name : null;
+
+  this.id = this.name ? pluralize.singular(name) : &#x27;id&#x27;;
+  this.base = this.name ? &#x27;/&#x27; + this.name : &#x27;/&#x27;;
+
+  var middleware = Array.prototype.slice.call(arguments, this.name ? 1 : 0);
+
+  this.actions = middleware.pop();
+
+  // if last object has `methods` property or `id` property, assume it is `options`
+  if (this.actions.methods || this.actions.id) {
+    options = this.actions;
+    this.actions = middleware.pop();
+  }
+
+  this.routes = [];
+  this.resources = [];
+
+  this.options = {
+    id: options.id,
+    methods: defaults(options.methods || {}, {
+      &#x27;options&#x27;: &#x27;OPTIONS&#x27;,
+      &#x27;new&#x27;:     &#x27;GET&#x27;,
+      &#x27;create&#x27;:  &#x27;POST&#x27;,
+      &#x27;edit&#x27;:    &#x27;GET&#x27;,
+      &#x27;update&#x27;:  &#x27;PUT&#x27;,
+      &#x27;index&#x27;:   &#x27;GET&#x27;,
+      &#x27;list&#x27;:    &#x27;GET&#x27;,
+      &#x27;read&#x27;:    &#x27;GET&#x27;,
+      &#x27;show&#x27;:    &#x27;GET&#x27;,
+      &#x27;destroy&#x27;: &#x27;DELETE&#x27;,
+      &#x27;remove&#x27;:  &#x27;DELETE&#x27;
+    })
+  };
+
+  // Set a custom id param name if one was provided.
+  this.id = this.options.id || this.id;
+
+  // create route definition (used for routing) for each resource action
+  Object.keys(this.actions).forEach(function(name) {
+    var action = this.actions[name];
+    var url = this.base;
+    var urlTrailing = this.base;
+    var params = [];
+
+    if (!this.options.methods[name]) return;
+
+    if (url[url.length-1] != &#x27;/&#x27;) {
+      urlTrailing = url + &#x27;/&#x27;;
+    }
+
+    if (name == &#x27;new&#x27;) {
+      url = urlTrailing + &#x27;new&#x27;;
+    }
+    else if (name == &#x27;edit&#x27;) {
+      url = urlTrailing + &#x27;:&#x27; + this.id + &#x27;/edit&#x27;;
+    }
+    else if (name.match(/(show|read|update|remove|destroy)/)) {
+      url = urlTrailing + &#x27;:&#x27; + this.id;
+    }
+
+    // compose multiple action middleware
+    if (action instanceof Array) {
+      this.actions[name] = compose(action);
+    }
+
+    // compose resource middleware
+    if (middleware.length) {
+      this.actions[name] = compose(middleware.concat(Array.isArray(action) ? action : [action]));
+    }
+
+    this.routes.push({
+      method: this.options.methods[name].toUpperCase(),
+      url: url,
+      regexp: pathToRegExp(url, params),
+      params: params,
+      action: this.actions[name]
+    });
+  }, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.ResourceRouter.prototype" id="apidoc.module.koa-middlewares.ResourceRouter.prototype">module koa-middlewares.ResourceRouter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.ResourceRouter.prototype.add" id="apidoc.element.koa-middlewares.ResourceRouter.prototype.add">
+        function <span class="apidocSignatureSpan">koa-middlewares.ResourceRouter.prototype.</span>add
+        <span class="apidocSignatureSpan">(resource)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (resource) {
+  var base = this.base[this.base.length-1] == &#x27;/&#x27; ? this.base : this.base + &#x27;/&#x27;;
+  this.resources.push(resource);
+
+  // Re-define base path for nested resource
+  resource.base = resource.name ? &#x27;/&#x27; + resource.name : &#x27;/&#x27;;
+  resource.base = base + &#x27;:&#x27; + this.id + resource.base;
+
+  // Re-define route paths for nested resource
+  for (var len = resource.routes.length, i=0; i&#x3c;len; i++) {
+    var route = resource.routes[i];
+    route.url = base + &#x27;:&#x27; + this.id + route.url;
+    route.params = [];
+    route.regexp = pathToRegExp(route.url, route.params);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.ResourceRouter.prototype.match" id="apidoc.element.koa-middlewares.ResourceRouter.prototype.match">
+        function <span class="apidocSignatureSpan">koa-middlewares.ResourceRouter.prototype.</span>match
+        <span class="apidocSignatureSpan">(path, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">match = function (path, params) {
+  var matched = [];
+
+  for (var len = this.routes.length, i=0; i&#x3c;len; i++) {
+    var route = this.routes[i];
+
+    if (route.regexp.test(path)) {
+      var captures = path.match(route.regexp);
+      if (captures &#x26;&#x26; captures.length) {
+        captures = captures.slice(1);
+      }
+
+      if (params &#x26;&#x26; route.params.length) {
+        for (var l = captures.length, n=0; n&#x3c;l; n++) {
+          if (route.params[n]) {
+            params[route.params[n].name] = captures[n];
+          }
+        }
+      }
+
+      matched.push(route);
+    }
+  }
+
+  return matched.length ? matched : false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.ResourceRouter.prototype.middleware" id="apidoc.element.koa-middlewares.ResourceRouter.prototype.middleware">
+        function <span class="apidocSignatureSpan">koa-middlewares.ResourceRouter.prototype.</span>middleware
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">middleware = function () {
+  var resource = this;
+
+  return function *(next) {
+    var matched;
+
+    this.params = [];
+
+    if (matched = resource.match(this.path, this.params)) {
+      var allowedMethods = [];
+
+      for (var len = matched.length, i=0; i&#x3c;len; i++) {
+        var route = matched[i];
+
+        if (this.method == route.method) {
+          if (this.params.user !== &#x27;new&#x27; || route.url.match(/new$/i)) {
+            return yield route.action.call(this, next);
+          }
+        }
+        else {
+          if (!~allowedMethods.indexOf(route.method)) {
+            allowedMethods.push(route.method);
+          }
+
+        }
+      }
+
+      this.status = (this.method == &#x27;OPTIONS&#x27; ? 204 : 405);
+      this.set(&#x27;Allow&#x27;, allowedMethods.join(&#x22;, &#x22;));
+    }
+
+    return yield next;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+* **koa-resource-router**: RESTful resource routing for koa.
+
+```js
+var users = new middlewares.Resource(&#x27;users&#x27;);
+app.use(users.<span class="apidocCodeKeywordSpan">middleware</span>());
+
+app.get(&#x27;/users&#x27;, function *() {
+  this.body = [{name: &#x27;Lee&#x27;}, {name: &#x27;Han&#x27;}];
+});
+```
+
+* **koa-rewrite**: URL rewrite middleware.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.csrf" id="apidoc.module.koa-middlewares.csrf">module koa-middlewares.csrf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.csrf.csrf" id="apidoc.element.koa-middlewares.csrf.csrf">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>csrf
+        <span class="apidocSignatureSpan">(app, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">csrf = function (app, opts) {
+  if (isApp(app)) {
+    opts = opts || {}
+  } else {
+    opts = app || {}
+    app = null
+  }
+
+  var tokens = require(&#x27;csrf&#x27;)(opts)
+  var middleware = opts.middleware || exports.middleware
+
+  if (app) {
+    define(app)
+    return app
+  }
+
+  return function* csrf(next) {
+    define(this)
+    yield middleware.call(this, next)
+  }
+
+  function define(ctx) {
+    var context = ctx.context || ctx
+    var response = ctx.response
+    var request = ctx.request
+
+<span class="apidocCodeCommentSpan">    /*
+     * Lazily creates a CSRF token.
+     * Creates one per request.
+     *
+     * @api public
+     */
+</span>
+    context.__defineGetter__(&#x27;csrf&#x27;, function () {
+      if (this._csrf) return this._csrf
+      if (!this.session) return null
+      var secret = this.session.secret
+        || (this.session.secret = tokens.secretSync())
+      return this._csrf = tokens.create(secret)
+    })
+
+    response.__defineGetter__(&#x27;csrf&#x27;, function () {
+      return this.ctx.csrf
+    })
+
+    /**
+     * Asserts that a CSRF token exists and is valid.
+     * Throws a 403 error otherwise.
+     * var body = yield this.request.json()
+     * try {
+     *   this.assertCSRF(body)
+     * } catch (err) {
+     *   this.status = 403
+     *   this.body = {
+     *     message: &#x27;invalid CSRF token&#x27;
+     *   }
+     * }
+     *
+     * @param {Object} body
+     * @return {Context} this
+     * @api public
+     **/
+
+    context.assertCSRF =
+    context.assertCsrf = function (body) {
+      // no session
+      var secret = this.session.secret
+      if (!secret) this.throw(403, &#x27;secret is missing&#x27;)
+
+      var token = (body &#x26;&#x26; body._csrf)
+        || (!opts.disableQuery &#x26;&#x26; this.query &#x26;&#x26; this.query._csrf)
+        || (this.get(&#x27;x-csrf-token&#x27;))
+        || (this.get(&#x27;x-xsrf-token&#x27;))
+        || body
+      if (!token) this.throw(403, &#x27;token is missing&#x27;)
+      if (!tokens.verify(secret, token)) this.throw(403, &#x27;invalid csrf token&#x27;)
+
+      return this
+    }
+
+    request.assertCSRF =
+    request.assertCsrf = function (body) {
+      this.ctx.assertCsrf(body)
+      return this
+    }
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var app = koa();
+
+app.use(middlewares.bodyParser());
+app.use(middlewares.router(app));
+app.use(middlewares.conditional());
+app.use(middlewares.etag());
+app.use(middlewares.compress());
+middlewares.<span class="apidocCodeKeywordSpan">csrf</span>(app);
+
+app.use(function *() {
+  this.body = &#x27;hello koa-middlewares&#x27;;
+});
+
+app.listen(7001);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.csrf.middleware" id="apidoc.element.koa-middlewares.csrf.middleware">
+        function <span class="apidocSignatureSpan">koa-middlewares.csrf.</span>middleware
+        <span class="apidocSignatureSpan">(next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (next) {
+  // ignore get, head, options
+  if (this.method === &#x27;GET&#x27;
+    || this.method === &#x27;HEAD&#x27;
+    || this.method === &#x27;OPTIONS&#x27;) {
+    return yield next
+  }
+
+  // bodyparser middlewares maybe store body in request.body
+  // or you can just set csrf token header
+  this.assertCSRF(this.request.body)
+
+  yield next
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+* **koa-resource-router**: RESTful resource routing for koa.
+
+```js
+var users = new middlewares.Resource(&#x27;users&#x27;);
+app.use(users.<span class="apidocCodeKeywordSpan">middleware</span>());
+
+app.get(&#x27;/users&#x27;, function *() {
+  this.body = [{name: &#x27;Lee&#x27;}, {name: &#x27;Han&#x27;}];
+});
+```
+
+* **koa-rewrite**: URL rewrite middleware.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.router" id="apidoc.module.koa-middlewares.router">module koa-middlewares.router</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.router" id="apidoc.element.koa-middlewares.router.router">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>router
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Router(opts) {
+  if (!(this instanceof Router)) {
+    return new Router(opts);
+  }
+
+  this.opts = opts || {};
+  this.methods = this.opts.methods || [
+    &#x27;HEAD&#x27;,
+    &#x27;OPTIONS&#x27;,
+    &#x27;GET&#x27;,
+    &#x27;PUT&#x27;,
+    &#x27;PATCH&#x27;,
+    &#x27;POST&#x27;,
+    &#x27;DELETE&#x27;
+  ];
+
+  this.params = {};
+  this.stack = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var koa = require(&#x27;koa&#x27;);
+var middlewares = require(&#x27;koa-middlewares&#x27;);
+
+var app = koa();
+
+app.use(middlewares.bodyParser());
+app.use(middlewares.<span class="apidocCodeKeywordSpan">router</span>(app));
+app.use(middlewares.conditional());
+app.use(middlewares.etag());
+app.use(middlewares.compress());
+middlewares.csrf(app);
+
+app.use(function *() {
+this.body = &#x27;hello koa-middlewares&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.url" id="apidoc.element.koa-middlewares.router.url">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.</span>url
+        <span class="apidocSignatureSpan">(path, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url = function (path, params) {
+    return Layer.prototype.url.call({path: path}, params);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.router.prototype" id="apidoc.module.koa-middlewares.router.prototype">module koa-middlewares.router.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.acl" id="apidoc.element.koa-middlewares.router.prototype.acl">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>acl
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">acl = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.all" id="apidoc.element.koa-middlewares.router.prototype.all">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>all
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27;) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, methods, middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.allowedMethods" id="apidoc.element.koa-middlewares.router.prototype.allowedMethods">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>allowedMethods
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">allowedMethods = function (options) {
+  options = options || {};
+  var implemented = this.methods;
+
+  return function *allowedMethods(next) {
+    yield *next;
+
+    var allowed = {};
+
+    if (!this.status || this.status === 404) {
+      this.matched.forEach(function (route) {
+        route.methods.forEach(function (method) {
+          allowed[method] = method;
+        });
+      });
+
+      var allowedArr = Object.keys(allowed);
+
+      if (!~implemented.indexOf(this.method)) {
+        if (options.throw) {
+          var notImplementedThrowable;
+          if (typeof options.notImplemented === &#x27;function&#x27;) {
+            notImplementedThrowable = options.notImplemented(); // set whatever the user returns from their function
+          } else {
+            notImplementedThrowable = new HttpError.NotImplemented();
+          }
+          throw notImplementedThrowable;
+        } else {
+          this.status = 501;
+          this.set(&#x27;Allow&#x27;, allowedArr);
+        }
+      } else if (allowedArr.length) {
+        if (this.method === &#x27;OPTIONS&#x27;) {
+          this.status = 204;
+        } else if (!allowed[this.method]) {
+          if (options.throw) {
+            var notAllowedThrowable;
+            if (typeof options.methodNotAllowed === &#x27;function&#x27;) {
+              notAllowedThrowable = options.methodNotAllowed(); // set whatever the user returns from their function
+            } else {
+              notAllowedThrowable = new HttpError.MethodNotAllowed();
+            }
+            throw notAllowedThrowable;
+          } else {
+            this.status = 405;
+          }
+        }
+        this.set(&#x27;Allow&#x27;, allowedArr);
+      }
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.bind" id="apidoc.element.koa-middlewares.router.prototype.bind">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>bind
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bind = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.checkout" id="apidoc.element.koa-middlewares.router.prototype.checkout">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>checkout
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkout = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.connect" id="apidoc.element.koa-middlewares.router.prototype.connect">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>connect
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.copy" id="apidoc.element.koa-middlewares.router.prototype.copy">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>copy
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.del" id="apidoc.element.koa-middlewares.router.prototype.del">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>del
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.delete" id="apidoc.element.koa-middlewares.router.prototype.delete">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>delete
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.get" id="apidoc.element.koa-middlewares.router.prototype.get">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>get
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+* **koa-router**: Provide express-style routing using app.get, app.put, app.post.
+
+```js
+app.use(middlewares.router(app));
+app.<span class="apidocCodeKeywordSpan">get</span>(&#x27;/&#x27;, function *() {
+  this.body = &#x27;Hello koa-router&#x27;;
+});
+```
+
+* **koa-resource-router**: RESTful resource routing for koa.
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.head" id="apidoc.element.koa-middlewares.router.prototype.head">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>head
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.link" id="apidoc.element.koa-middlewares.router.prototype.link">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>link
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">link = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.lock" id="apidoc.element.koa-middlewares.router.prototype.lock">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>lock
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lock = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.m-search" id="apidoc.element.koa-middlewares.router.prototype.m-search">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>m-search
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">m-search = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.match" id="apidoc.element.koa-middlewares.router.prototype.match">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>match
+        <span class="apidocSignatureSpan">(path, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">match = function (path, method) {
+  var layers = this.stack;
+  var layer;
+  var matched = {
+    path: [],
+    pathAndMethod: [],
+    route: false
+  };
+
+  for (var len = layers.length, i = 0; i &#x3c; len; i++) {
+    layer = layers[i];
+
+    debug(&#x27;test %s %s&#x27;, layer.path, layer.regexp);
+
+    if (layer.match(path)) {
+      matched.path.push(layer);
+
+      if (layer.methods.length === 0 || ~layer.methods.indexOf(method)) {
+        matched.pathAndMethod.push(layer);
+        if (layer.methods.length) matched.route = true;
+      }
+    }
+  }
+
+  return matched;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.merge" id="apidoc.element.koa-middlewares.router.prototype.merge">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>merge
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.middleware" id="apidoc.element.koa-middlewares.router.prototype.middleware">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>middleware
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">middleware = function () {
+  var router = this;
+
+  var dispatch = function *dispatch(next) {
+    debug(&#x27;%s %s&#x27;, this.method, this.path);
+
+    var path = router.opts.routerPath || this.routerPath || this.path;
+    var matched = router.match(path, this.method);
+    var layer, i, ii;
+
+    if (this.matched) {
+      this.matched.push.apply(this.matched, matched.path);
+    } else {
+      this.matched = matched.path;
+    }
+
+    if (matched.pathAndMethod.length) {
+      i = matched.pathAndMethod.length;
+
+      var mostSpecificPath = matched.pathAndMethod[matched.pathAndMethod.length - 1].path
+      this._matchedRoute = mostSpecificPath
+
+      while (matched.route &#x26;&#x26; i--) {
+        layer = matched.pathAndMethod[i];
+        ii = layer.stack.length;
+        this.captures = layer.captures(path, this.captures);
+        this.params = layer.params(path, this.captures, this.params);
+        debug(&#x27;dispatch %s %s&#x27;, layer.path, layer.regexp);
+
+        while (ii--) {
+          if (layer.stack[ii].constructor.name === &#x27;GeneratorFunction&#x27;) {
+            next = layer.stack[ii].call(this, next);
+          } else {
+            next = Promise.resolve(layer.stack[ii].call(this, next));
+          }
+        }
+      }
+    }
+
+    if (typeof next.next === &#x27;function&#x27;) {
+      yield *next;
+    } else {
+      yield next;
+    }
+  };
+
+  dispatch.router = this;
+
+  return dispatch;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+* **koa-resource-router**: RESTful resource routing for koa.
+
+```js
+var users = new middlewares.Resource(&#x27;users&#x27;);
+app.use(users.<span class="apidocCodeKeywordSpan">middleware</span>());
+
+app.get(&#x27;/users&#x27;, function *() {
+  this.body = [{name: &#x27;Lee&#x27;}, {name: &#x27;Han&#x27;}];
+});
+```
+
+* **koa-rewrite**: URL rewrite middleware.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.mkactivity" id="apidoc.element.koa-middlewares.router.prototype.mkactivity">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>mkactivity
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkactivity = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.mkcalendar" id="apidoc.element.koa-middlewares.router.prototype.mkcalendar">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>mkcalendar
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkcalendar = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.mkcol" id="apidoc.element.koa-middlewares.router.prototype.mkcol">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>mkcol
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkcol = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.move" id="apidoc.element.koa-middlewares.router.prototype.move">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>move
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">move = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.notify" id="apidoc.element.koa-middlewares.router.prototype.notify">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>notify
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.options" id="apidoc.element.koa-middlewares.router.prototype.options">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>options
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.param" id="apidoc.element.koa-middlewares.router.prototype.param">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>param
+        <span class="apidocSignatureSpan">(param, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">param = function (param, middleware) {
+  this.params[param] = middleware;
+  this.stack.forEach(function (route) {
+    route.param(param, middleware);
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.patch" id="apidoc.element.koa-middlewares.router.prototype.patch">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>patch
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">patch = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.post" id="apidoc.element.koa-middlewares.router.prototype.post">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>post
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.prefix" id="apidoc.element.koa-middlewares.router.prototype.prefix">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>prefix
+        <span class="apidocSignatureSpan">(prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prefix = function (prefix) {
+  this.opts.prefix = prefix;
+
+  this.stack.forEach(function (route) {
+    route.setPrefix(prefix);
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.propfind" id="apidoc.element.koa-middlewares.router.prototype.propfind">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>propfind
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">propfind = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.proppatch" id="apidoc.element.koa-middlewares.router.prototype.proppatch">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>proppatch
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">proppatch = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.purge" id="apidoc.element.koa-middlewares.router.prototype.purge">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>purge
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">purge = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.put" id="apidoc.element.koa-middlewares.router.prototype.put">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>put
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.rebind" id="apidoc.element.koa-middlewares.router.prototype.rebind">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>rebind
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rebind = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.redirect" id="apidoc.element.koa-middlewares.router.prototype.redirect">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>redirect
+        <span class="apidocSignatureSpan">(source, destination, code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">redirect = function (source, destination, code) {
+  // lookup source route by name
+  if (source[0] !== &#x27;/&#x27;) {
+    source = this.url(source);
+  }
+
+  // lookup destination route by name
+  if (destination[0] !== &#x27;/&#x27;) {
+    destination = this.url(destination);
+  }
+
+  return this.all(source, function *() {
+    this.redirect(destination);
+    this.status = code || 301;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.register" id="apidoc.element.koa-middlewares.router.prototype.register">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>register
+        <span class="apidocSignatureSpan">(path, methods, middleware, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (path, methods, middleware, opts) {
+  opts = opts || {};
+
+  var stack = this.stack;
+
+  // create route
+  var route = new Layer(path, methods, middleware, {
+    end: opts.end === false ? opts.end : true,
+    name: opts.name,
+    sensitive: opts.sensitive || this.opts.sensitive || false,
+    strict: opts.strict || this.opts.strict || false,
+    prefix: opts.prefix || this.opts.prefix || &#x22;&#x22;,
+    ignoreCaptures: opts.ignoreCaptures
+  });
+
+  if (this.opts.prefix) {
+    route.setPrefix(this.opts.prefix);
+  }
+
+  // add parameter middleware
+  Object.keys(this.params).forEach(function (param) {
+    route.param(param, this.params[param]);
+  }, this);
+
+  // register route with router
+  if (methods.length || !stack.length) {
+    // if we don&#x27;t have parameters, put before any with same route
+    // nesting level but with parameters
+    var added = false;
+
+    if (!route.paramNames.length) {
+      var routeNestingLevel = route.path.toString().split(&#x27;/&#x27;).length;
+
+      added = stack.some(function (m, i) {
+        var mNestingLevel = m.path.toString().split(&#x27;/&#x27;).length;
+        var isParamRoute = !!m.paramNames.length;
+        if (routeNestingLevel === mNestingLevel &#x26;&#x26; isParamRoute) {
+          return stack.splice(i, 0, route);
+        }
+      });
+    }
+
+    if (!added) stack.push(route);
+  } else {
+    stack.some(function (m, i) {
+      if (!m.methods.length &#x26;&#x26; i === stack.length - 1) {
+        return stack.push(route);
+      } else if (m.methods.length) {
+        if (stack[i - 1]) {
+          return stack.splice(i, 0, route);
+        } else {
+          return stack.unshift(route);
+        }
+      }
+    });
+  }
+
+  return route;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.report" id="apidoc.element.koa-middlewares.router.prototype.report">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>report
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">report = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.route" id="apidoc.element.koa-middlewares.router.prototype.route">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>route
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">route = function (name) {
+  var routes = this.stack;
+
+  for (var len = routes.length, i=0; i&#x3c;len; i++) {
+    if (routes[i].name &#x26;&#x26; routes[i].name === name) {
+      return routes[i];
+    }
+  }
+
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.routes" id="apidoc.element.koa-middlewares.router.prototype.routes">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>routes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routes = function () {
+  var router = this;
+
+  var dispatch = function *dispatch(next) {
+    debug(&#x27;%s %s&#x27;, this.method, this.path);
+
+    var path = router.opts.routerPath || this.routerPath || this.path;
+    var matched = router.match(path, this.method);
+    var layer, i, ii;
+
+    if (this.matched) {
+      this.matched.push.apply(this.matched, matched.path);
+    } else {
+      this.matched = matched.path;
+    }
+
+    if (matched.pathAndMethod.length) {
+      i = matched.pathAndMethod.length;
+
+      var mostSpecificPath = matched.pathAndMethod[matched.pathAndMethod.length - 1].path
+      this._matchedRoute = mostSpecificPath
+
+      while (matched.route &#x26;&#x26; i--) {
+        layer = matched.pathAndMethod[i];
+        ii = layer.stack.length;
+        this.captures = layer.captures(path, this.captures);
+        this.params = layer.params(path, this.captures, this.params);
+        debug(&#x27;dispatch %s %s&#x27;, layer.path, layer.regexp);
+
+        while (ii--) {
+          if (layer.stack[ii].constructor.name === &#x27;GeneratorFunction&#x27;) {
+            next = layer.stack[ii].call(this, next);
+          } else {
+            next = Promise.resolve(layer.stack[ii].call(this, next));
+          }
+        }
+      }
+    }
+
+    if (typeof next.next === &#x27;function&#x27;) {
+      yield *next;
+    } else {
+      yield next;
+    }
+  };
+
+  dispatch.router = this;
+
+  return dispatch;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.search" id="apidoc.element.koa-middlewares.router.prototype.search">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>search
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">search = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.subscribe" id="apidoc.element.koa-middlewares.router.prototype.subscribe">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>subscribe
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.trace" id="apidoc.element.koa-middlewares.router.prototype.trace">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>trace
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trace = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.unbind" id="apidoc.element.koa-middlewares.router.prototype.unbind">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>unbind
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unbind = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.unlink" id="apidoc.element.koa-middlewares.router.prototype.unlink">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>unlink
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unlink = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.unlock" id="apidoc.element.koa-middlewares.router.prototype.unlock">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>unlock
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unlock = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.unsubscribe" id="apidoc.element.koa-middlewares.router.prototype.unsubscribe">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>unsubscribe
+        <span class="apidocSignatureSpan">(name, path, middleware)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unsubscribe = function (name, path, middleware) {
+  var middleware;
+
+  if (typeof path === &#x27;string&#x27; || path instanceof RegExp) {
+    middleware = Array.prototype.slice.call(arguments, 2);
+  } else {
+    middleware = Array.prototype.slice.call(arguments, 1);
+    path = name;
+    name = null;
+  }
+
+  this.register(path, [method], middleware, {
+    name: name
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.url" id="apidoc.element.koa-middlewares.router.prototype.url">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>url
+        <span class="apidocSignatureSpan">(name, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url = function (name, params) {
+  var route = this.route(name);
+
+  if (route) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return route.url.apply(route, args);
+  }
+
+  return new Error(&#x22;No route found for name: &#x22; + name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.router.prototype.use" id="apidoc.element.koa-middlewares.router.prototype.use">
+        function <span class="apidocSignatureSpan">koa-middlewares.router.prototype.</span>use
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function () {
+  var router = this;
+  var middleware = Array.prototype.slice.call(arguments);
+  var path;
+
+  // support array of paths
+  if (Array.isArray(middleware[0]) &#x26;&#x26; typeof middleware[0][0] === &#x27;string&#x27;) {
+    middleware[0].forEach(function (p) {
+      router.use.apply(router, [p].concat(middleware.slice(1)));
+    });
+
+    return this;
+  }
+
+  if (typeof middleware[0] === &#x27;string&#x27;) {
+    path = middleware.shift();
+  }
+
+  // filter out nested routers from filter
+  middleware = middleware.filter(function (fn) {
+    if (fn.router) {
+      fn.router.stack.forEach(function (layer) {
+        if (path) layer.setPrefix(path);
+        if (router.opts.prefix) layer.setPrefix(router.opts.prefix);
+        router.stack.push(layer);
+      });
+
+      if (router.params) {
+        Object.keys(router.params).forEach(function (key) {
+          fn.router.param(key, router.params[key]);
+        });
+      }
+
+      return false;
+    }
+
+    return true;
+  });
+
+  if (middleware.length) {
+    router.register(path || &#x27;(.*)&#x27;, [], middleware, {
+      end: false,
+      ignoreCaptures: !path
+    });
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+
+var koa = require(&#x27;koa&#x27;);
+var middlewares = require(&#x27;koa-middlewares&#x27;);
+
+var app = koa();
+
+app.<span class="apidocCodeKeywordSpan">use</span>(middlewares.bodyParser());
+app.use(middlewares.router(app));
+app.use(middlewares.conditional());
+app.use(middlewares.etag());
+app.use(middlewares.compress());
+middlewares.csrf(app);
+
+app.use(function *() {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.session" id="apidoc.module.koa-middlewares.session">module koa-middlewares.session</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.session.session" id="apidoc.element.koa-middlewares.session.session">
+        function <span class="apidocSignatureSpan">koa-middlewares.</span>session
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">session = function (options) {
+  options = options || {};
+  let key = options.key || &#x27;koa.sid&#x27;;
+  let client = options.store || new MemoryStore();
+  let errorHandler = options.errorHandler || defaultErrorHanlder;
+  let reconnectTimeout = options.reconnectTimeout || 10000;
+
+  let store = new Store(client, {
+    ttl: options.ttl,
+    prefix: options.prefix
+  });
+
+  let genSid = options.genSid || uid.sync;
+  let valid = options.valid || noop;
+  let beforeSave = options.beforeSave || noop;
+
+  let cookie = options.cookie || {};
+  copy(defaultCookie).to(cookie);
+
+  let storeStatus = &#x27;available&#x27;;
+  let waitStore = Promise.resolve();
+
+  // notify user that this store is not
+  // meant for a production environment
+  if (&#x27;production&#x27; === process.env.NODE_ENV
+   &#x26;&#x26; client instanceof MemoryStore) console.warn(warning);
+
+  let sessionIdStore = options.sessionIdStore || {
+
+    get: function() {
+      return this.cookies.get(key, cookie);
+    },
+
+    set: function(sid, session) {
+      this.cookies.set(key, sid, session.cookie);
+    },
+
+    reset: function() {
+      this.cookies.set(key, null);
+    }
+  };
+
+  store.on(&#x27;disconnect&#x27;, function() {
+    if (storeStatus !== &#x27;available&#x27;) return;
+    storeStatus = &#x27;pending&#x27;;
+    waitStore = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        if (storeStatus === &#x27;pending&#x27;) storeStatus = &#x27;unavailable&#x27;;
+        reject(new Error(&#x27;session store is unavailable&#x27;));
+      }, reconnectTimeout);
+      store.once(&#x27;connect&#x27;, resolve);
+    });
+
+  });
+
+  store.on(&#x27;connect&#x27;, function() {
+    storeStatus = &#x27;available&#x27;;
+    waitStore = Promise.resolve();
+  });
+
+  // save empty session hash for compare
+  const EMPTY_SESSION_HASH = hash(generateSession());
+
+  return options.defer ? deferSession : session;
+
+  function addCommonAPI() {
+
+    this._sessionSave = null;
+
+    // more flexible
+    this.__defineGetter__(&#x27;sessionSave&#x27;, function () {
+      return this._sessionSave;
+    });
+
+    this.__defineSetter__(&#x27;sessionSave&#x27;, function (save) {
+      this._sessionSave = save;
+    });
+  }
+
+<span class="apidocCodeCommentSpan">  /**
+   * generate a new session
+   */
+</span>  function generateSession() {
+    let session = {};
+    //you can alter the cookie options in nexts
+    session.cookie = {};
+    for (let prop in cookie) {
+      session.cookie[prop] = cookie[prop];
+    }
+    compatMaxage(session.cookie);
+    return session;
+  }
+
+  /**
+   * check url match cookie&#x27;s path
+   */
+  function matchPath(ctx) {
+    let pathname = parse(ctx).pathname;
+    let cookiePath = cookie.path || &#x27;/&#x27;;
+    if (cookiePath === &#x27;/&#x27;) {
+      return true;
+    }
+    if (pathname.indexOf(cookiePath) !== 0) {
+      debug(&#x27;cookie path not match&#x27;);
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * get session from store
+   *   get sessionId from cookie
+   *   save sessionId into context
+   *   get session from store
+   */
+  function *getSession() {
+    if (!matchPath(this)) return;
+    if (storeStatus === &#x27;pending&#x27;) {
+      debug(&#x27;store is disconnect and pending&#x27;);
+      yield waitStore;
+    } else if (storeStatus === &#x27;unavailable&#x27;) {
+      debug(&#x27;store is unavailable&#x27;);
+      throw new Error(&#x27;session store is unavailable&#x27;);
+    }
+
+    if (!this.sessionId) {
+      this.sessionId = sessionIdStore.get.call(this);
+    }
+
+    let session;
+    let isNew = false;
+    if (!this.sessionId) {
+      debug(&#x27;session id not exist, generate a new one&#x27;);
+      session = generateSession();
+      this.sessionId = genSid.call(this, 24);
+      isNew = true;
+    } else {
+      try {
+        session = yield store.get(this.sessionId);
+        debug(&#x27;get session %j with key %s&#x27;, session, this.sessionId);
+      } catch (err) {
+        if (err.code === &#x27;ENOENT&#x27;) {
+          debug(&#x27;get session error, code = ENOENT&#x27;);
+        } else {
+          debug(&#x27;get session error: &#x27;, err.message);
+          errorHandler(err, &#x27;get&#x27;, this);
+        }
+      }
+    }
+
+    // make sure the session is still valid
+    if (!session ||
+      !valid(this, session)) {
+      debug(&#x27;session is empty or invalid&#x27;);
+      session = generateSession();
+      this.sessionId = genSid.call(this, 24);
+      sessionIdStore.re ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+* **koa-generic-session**: A session like connect with memory,
+has friendly APIs for work with other Stores such as `redis`, `mongo`.
+* **koa-redis**: Work togather with `koa-generic-session`, provide a redis store from koa-sess.
+
+```js
+app.use(middlewares.<span class="apidocCodeKeywordSpan">session</span>({
+store: middlewares.RedisStore(),
+defer: true
+}));
+
+app.use(function *() {
+var session = yield this.session;
+session.foo = &#x27;bar&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.session.MemoryStore" id="apidoc.element.koa-middlewares.session.MemoryStore">
+        function <span class="apidocSignatureSpan">koa-middlewares.session.</span>MemoryStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MemoryStore = function () {
+  this.sessions = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.session.MemoryStore" id="apidoc.module.koa-middlewares.session.MemoryStore">module koa-middlewares.session.MemoryStore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.session.MemoryStore.MemoryStore" id="apidoc.element.koa-middlewares.session.MemoryStore.MemoryStore">
+        function <span class="apidocSignatureSpan">koa-middlewares.session.</span>MemoryStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MemoryStore = function () {
+  this.sessions = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-middlewares.session.MemoryStore.prototype" id="apidoc.module.koa-middlewares.session.MemoryStore.prototype">module koa-middlewares.session.MemoryStore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.session.MemoryStore.prototype.destroy" id="apidoc.element.koa-middlewares.session.MemoryStore.prototype.destroy">
+        function <span class="apidocSignatureSpan">koa-middlewares.session.MemoryStore.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(sid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (sid) {
+  delete this.sessions[sid];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.session.MemoryStore.prototype.get" id="apidoc.element.koa-middlewares.session.MemoryStore.prototype.get">
+        function <span class="apidocSignatureSpan">koa-middlewares.session.MemoryStore.prototype.</span>get
+        <span class="apidocSignatureSpan">(sid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (sid) {
+  debug(&#x27;get value %j with key %s&#x27;, this.sessions[sid], sid);
+  return this.sessions[sid];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+* **koa-router**: Provide express-style routing using app.get, app.put, app.post.
+
+```js
+app.use(middlewares.router(app));
+app.<span class="apidocCodeKeywordSpan">get</span>(&#x27;/&#x27;, function *() {
+  this.body = &#x27;Hello koa-router&#x27;;
+});
+```
+
+* **koa-resource-router**: RESTful resource routing for koa.
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-middlewares.session.MemoryStore.prototype.set" id="apidoc.element.koa-middlewares.session.MemoryStore.prototype.set">
+        function <span class="apidocSignatureSpan">koa-middlewares.session.MemoryStore.prototype.</span>set
+        <span class="apidocSignatureSpan">(sid, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (sid, val) {
+  debug(&#x27;set value %j for key %s&#x27;, val, sid);
+  this.sessions[sid] = val;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
