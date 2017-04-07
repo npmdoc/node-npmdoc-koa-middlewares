@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"koa-middlewares",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "koa-middlewares",
+    "description": "api documentation for [koa-middlewares (v6.0.0)](https://github.com/cnpm/koa-middlewares) [![npm package](https://img.shields.io/npm/v/npmdoc-koa-middlewares.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-koa-middlewares) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-koa-middlewares.svg)](https://travis-ci.org/npmdoc/node-npmdoc-koa-middlewares)",
     "devDependencies": {
-        "koa-middlewares": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "koa-middlewares": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-koa-middlewares",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-koa-middlewares",
+    "keywords": [
+        "documentation",
+        "koa-middlewares"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_koa_middlewares.js",
+    "name": "npmdoc-koa-middlewares",
+    "nameAlias": "npmdoc_koa_middlewares",
+    "nameOriginal": "npmdoc-koa-middlewares",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-koa-middlewares"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
